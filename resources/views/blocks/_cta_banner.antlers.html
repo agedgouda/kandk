@@ -1,5 +1,5 @@
 <a href="{{ button_url }}" class="group relative flex min-h-[450px] items-center justify-center overflow-hidden px-10 py-[60px] text-center text-white">
-    <span class="absolute inset-0 bg-cover bg-center transition-transform duration-[1500ms] group-hover:scale-110" style="background-image: url('{{ image:url }}')"></span>
+    {{ partial:img :image="image" class="absolute inset-0 size-full object-cover transition-transform duration-[1500ms] group-hover:scale-110" }}
     <span class="absolute inset-0 bg-primary/40"></span>
     <span class="relative block">
         <span class="block font-serif text-[32px] leading-[1.25] md:text-[42px] md:leading-[54px]">{{ heading }}</span>

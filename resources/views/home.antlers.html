@@ -2,7 +2,7 @@
 <section class="relative mt-[49px] h-[400px] overflow-hidden bg-primary md:h-[550px]" data-slider>
     {{ slides }}
         <div class="absolute inset-0 transition-opacity duration-[2000ms] {{ first ? 'opacity-100' : 'pointer-events-none opacity-0' }}" data-slide>
-            <div class="absolute inset-0 bg-cover bg-center transition-transform duration-[5400ms] ease-linear" style="background-image: url('{{ image:url }}')" data-slide-bg></div>
+            {{ partial:img :image="image" sizes="100vw" :priority="first" class="absolute inset-0 size-full object-cover transition-transform duration-[5400ms] ease-linear" extra="data-slide-bg" }}
             <{{ url ? 'a' : 'div' }} {{ if url }}href="{{ url }}"{{ /if }} class="relative flex h-full items-center px-12 md:pl-[100px]">
                 <div class="max-w-[74%] [text-shadow:0_0_15px_rgba(0,0,0,0.3)]">
                     <h2 class="mb-5 font-serif text-[34px] leading-[44px] font-medium text-white md:text-[52px] md:leading-[62px]">{{ heading | nl2br }}</h2>
@@ -38,12 +38,12 @@
                         <span class="flex items-center px-5 py-[1px] text-[16px] leading-6">{{ title }}</span>
                     </button>
                     <div class="hidden bg-mist p-[30px] group-data-open:block">
-                        <a href="{{ url }}" class="block"><img src="{{ image:url }}" alt="" class="h-[200px] w-full object-cover"></a>
+                        <a href="{{ url }}" class="block" tabindex="-1" aria-hidden="true">{{ partial:img :image="image" widths="400,800" sizes="(min-width: 1024px) 30vw, 100vw" class="h-[200px] w-full object-cover" }}</a>
                         <div class="mt-[30px]">
                             <div class="text-[16px] leading-6 text-black">{{ title }}</div>
                             <div class="mt-[10px] text-[16px] leading-4 text-body">{{ date format="d F Y" }}</div>
-                            {{ if excerpt }}<div class="mt-[10px] text-[16px] leading-6 text-[#7a7a7a]">{{ excerpt | truncate(110, '...') }}</div>{{ /if }}
-                            <a href="{{ url }}" class="mt-5 inline-block bg-primary p-[5px] text-[16px] leading-6 text-white transition-colors hover:bg-secondary">Read More</a>
+                            {{ if excerpt }}<div class="mt-[10px] text-[16px] leading-6 text-[#666]">{{ excerpt | truncate(110, '...') }}</div>{{ /if }}
+                            <a href="{{ url }}" class="mt-5 inline-block bg-primary p-[5px] text-[16px] leading-6 text-white transition-colors hover:bg-secondary">Read More<span class="sr-only">: {{ title }}</span></a>
                         </div>
                     </div>
                 </div>
@@ -58,7 +58,7 @@
     <div class="mt-10 grid gap-5 px-5 sm:grid-cols-2 md:mt-[90px] lg:grid-cols-4 lg:px-10">
         {{ reasons }}
             <div class="{{ color }} p-[25px] text-center text-white lg:min-h-[391px]">
-                <img src="{{ icon:url }}" alt="" class="mx-auto size-[81px]">
+                {{ partial:img :image="icon" widths="81,162,243" sizes="81px" class="mx-auto size-[81px]" }}
                 <h3 class="mt-[34px] font-serif text-[28px] leading-[34px]">{{ title }}</h3>
                 <p class="mt-5 text-[18px] leading-[26px]">{{ text }}</p>
             </div>
@@ -87,7 +87,7 @@
 
 {{# Industry CTA #}}
 <a href="{{ cta_url }}" class="group relative flex min-h-[450px] items-center justify-center overflow-hidden px-10 py-[60px] text-center text-white">
-    <span class="absolute inset-0 bg-cover bg-center transition-transform duration-[1500ms] group-hover:scale-110" style="background-image: url('{{ cta_image:url }}')"></span>
+    {{ partial:img :image="cta_image" class="absolute inset-0 size-full object-cover transition-transform duration-[1500ms] group-hover:scale-110" }}
     <span class="absolute inset-0 bg-[#15517d9e] transition-colors duration-[1500ms] group-hover:bg-[#15517d70]"></span>
     <span class="relative block">
         <span class="block font-serif text-[32px] leading-[1.25] md:text-[42px] md:leading-[54px]">{{ cta_title }}</span>
@@ -113,7 +113,8 @@
 {{ /testimonial }}
 
 {{# Careers #}}
-<section class="relative flex min-h-[500px] items-center bg-cover bg-center py-[120px]" style="background-image: url('{{ careers_image:url }}')">
+<section class="relative flex min-h-[500px] items-center overflow-hidden py-[120px]">
+    {{ partial:img :image="careers_image" class="absolute inset-0 size-full object-cover" }}
     <div class="absolute inset-0 bg-secondary opacity-[0.26]"></div>
     <div class="relative grid w-full gap-5 px-5 lg:grid-cols-[581px_1fr] lg:pr-[71px] lg:pl-0">
         <div class="hidden lg:block"></div>

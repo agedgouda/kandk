@@ -1,6 +1,6 @@
 <article class="px-5 pt-[49px] md:px-10">
     <h1 class="mx-auto max-w-[650px] text-center font-serif text-[36px] leading-[46px] font-medium text-primary md:text-[52px] md:leading-[62px]">{{ title }}</h1>
-    {{ if image }}<img src="{{ image:url }}" alt="" class="mx-auto mt-[70px] aspect-[3/2] w-full max-w-[1150px] object-cover">{{ /if }}
+    {{ partial:img :image="image" widths="480,800,1150" sizes="(min-width: 1150px) 1150px, 100vw" priority="true" class="mx-auto mt-[70px] aspect-[3/2] h-auto w-full max-w-[1150px] object-cover" }}
     <div class="prose-kk mx-auto mt-[50px] max-w-[1150px] [&_p]:mb-5">{{ content }}</div>
 </article>
 

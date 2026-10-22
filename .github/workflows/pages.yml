@@ -49,7 +49,7 @@ jobs:
           APP_DEBUG: 'false'
           APP_URL: ${{ vars.SITE_URL }}
           STATIC_DEMO: 'true'
-        run: php please ssg:generate
+        run: php please ssg:generate && chmod -R a+rX storage/app/static
 
       - uses: actions/upload-pages-artifact@v5
         with:

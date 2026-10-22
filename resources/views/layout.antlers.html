@@ -6,10 +6,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noindex, nofollow, noarchive, noimageindex, noai, noimageai">
         <title>{{ (title ?? site:name) | sanitize }}</title>
+        <meta name="description" content="{{ (excerpt ?? settings:meta_description) | strip_tags | sanitize }}">
         <link rel="icon" href="/images/kk/KK_Favicon.png">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Gelasio:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="preload" href="/fonts/plus-jakarta-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="/fonts/gelasio-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+        {{ yield:preload }}
         {{ vite src="resources/js/site.js|resources/css/site.css" }}
     </head>
     <body class="bg-white font-sans text-base leading-6 tracking-[-0.1px] text-body antialiased">

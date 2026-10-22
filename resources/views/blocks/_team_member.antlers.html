@@ -5,7 +5,7 @@
     </div>
     <div class="mt-[30px] flex flex-col gap-6 p-[10px] sm:flex-row sm:gap-[85px]">
         <div class="shrink-0 sm:w-[108px]">
-            {{ if photo }}<img src="{{ photo:url }}" alt="{{ name }}" class="w-[108px]">{{ /if }}
+            {{ partial:img :image="photo" widths="108,216" sizes="108px" :alt="name" class="h-auto w-[108px]" }}
             <div class="mt-5 flex gap-[10px]">
                 {{ if linkedin }}
                     <a href="{{ linkedin }}" class="inline-flex size-7 items-center justify-center rounded-[10%] bg-[#0077b5]" target="_blank" rel="noopener">

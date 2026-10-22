@@ -1,7 +1,7 @@
 <header class="fixed inset-x-0 top-0 z-40 bg-white">
     <div class="flex h-[90px] items-center justify-between px-5 lg:h-[126px] lg:pr-[17px] lg:pl-[57px]">
         <a href="/" class="shrink-0">
-            <img src="{{ settings:logo:url }}" alt="{{ site:name }}" class="h-auto w-[260px] lg:w-[502px]">
+            {{ partial:img :image="settings:logo" widths="520,1004" sizes="(min-width: 1024px) 502px, 260px" :alt="site:name" class="h-auto w-[260px] lg:w-[502px]" eager="true" }}
         </a>
 
         <nav class="hidden lg:block" aria-label="Main">

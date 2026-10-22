@@ -1,0 +1,20 @@
+{{#
+    Responsive image: makes resized WebP copies so phones download a small file.
+    image: the asset; sizes: how wide it shows (e.g. "100vw"); widths: comma list of copies to make;
+    priority: true for the main image at the top of the page; eager: true for other images in the first screen; extra: any other attributes.
+#}}
+{{ if image }}
+{{ _widths = (widths ?? '480,800,1200,1600') | explode(',') }}
+{{ _largest = _widths | last }}
+<img
+    src="{{ glide :src="image" :width="_largest" fit="max" format="webp" quality="75" }}"
+    srcset="{{ _widths }}{{ glide :src="image" :width="value" fit="max" format="webp" quality="75" }} {{ value }}w{{ unless last }}, {{ /unless }}{{ /_widths }}"
+    sizes="{{ sizes ?? '100vw' }}"
+    {{ if image:width }}width="{{ image:width }}" height="{{ image:height }}"{{ /if }}
+    alt="{{ alt ?? '' }}"
+    class="{{ class }}"
+    {{ if priority }}fetchpriority="high"{{ elseif !eager }}loading="lazy"{{ /if }}
+    decoding="async"
+    {{ extra }}
+>
+{{ /if }}

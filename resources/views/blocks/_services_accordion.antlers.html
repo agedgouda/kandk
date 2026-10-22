@@ -19,5 +19,5 @@
         {{ if closing }}<h3 class="mt-[60px] font-serif text-[24px] leading-[30px] text-primary md:text-[28px] md:leading-[34px]">{{ closing }}</h3>{{ /if }}
         {{ if button_text }}<a href="{{ button_url }}" class="mt-5 inline-block rounded-[3px] bg-secondary px-6 py-3 text-[18px] leading-[18px] uppercase text-white transition-colors hover:bg-accent">{{ button_text }}</a>{{ /if }}
     </div>
-    <div class="min-h-[400px] bg-cover bg-center lg:w-[36%]" style="background-image: url('{{ image:url }}')"></div>
+    <div class="relative min-h-[400px] lg:w-[36%]">{{ partial:img :image="image" sizes="(min-width: 1024px) 36vw, 100vw" class="absolute inset-0 size-full object-cover" }}</div>
 </section>

@@ -1,5 +1,13 @@
 title: 'Site Settings'
 tabs:
+  seo:
+    display: SEO
+    sections:
+      -
+        fields:
+          -
+            handle: meta_description
+            field: { type: textarea, display: 'Site Description', instructions: 'Shown in search results. Pages with their own excerpt use that instead.', character_limit: 160 }
   header:
     display: Header
     sections:

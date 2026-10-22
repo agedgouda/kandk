@@ -1,8 +1,8 @@
 <article class="mx-auto max-w-[1150px] px-5 pt-[49px] pb-20">
     <h1 class="mx-auto max-w-[900px] text-center font-serif text-[34px] leading-[44px] font-medium text-primary md:text-[48px] md:leading-[60px]">{{ title }}</h1>
     <p class="mt-4 text-center text-[16px] text-accent">{{ date format="d F Y" }}</p>
-    {{ if image }}<img src="{{ image:url }}" alt="" class="mt-[50px] w-full">{{ /if }}
-    <img src="/assets/pages/bdo.png" alt="BDO Alliance USA" class="mt-10 w-[160px]">
+    {{ partial:img :image="image" widths="480,800,1200" priority="true" class="mt-[50px] h-auto w-full" }}
+    <img src="/assets/pages/bdo.webp" width="273" height="173" alt="BDO Alliance USA" loading="lazy" class="mt-10 h-auto w-[160px]">
     {{ if content }}
         <div class="prose-kk mt-10">{{ content }}</div>
     {{ else }}
