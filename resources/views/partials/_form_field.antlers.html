@@ -1,0 +1,13 @@
+{{# One form field, styled like the live site #}}
+<div class="{{ width == 50 ? 'sm:col-span-1' : 'sm:col-span-2' }}">
+    <label for="{{ handle }}" class="mb-1 block text-[14px] leading-[21px] text-primary">{{ display }}{{ if validate | contains('required') }} <span class="text-[#c02b0a]">(Required)</span>{{ /if }}</label>
+    {{ if type == 'textarea' }}
+        <textarea id="{{ handle }}" name="{{ handle }}" rows="6" class="w-full border border-[#bbcfdb] bg-white px-3 py-2 text-[16px] focus:border-secondary focus:outline-none">{{ old }}</textarea>
+    {{ elseif type == 'files' }}
+        <input id="{{ handle }}" type="file" name="{{ handle }}" accept=".pdf,.doc,.docx" class="w-full text-[14px] file:mr-4 file:border-0 file:bg-secondary file:px-4 file:py-2 file:text-white">
+        <p class="mt-1 text-[13px] text-[#7a7a7a]">Max. file size: 64 MB.</p>
+    {{ else }}
+        <input id="{{ handle }}" type="{{ input_type ?? 'text' }}" name="{{ handle }}" value="{{ old }}" class="w-full border border-[#bbcfdb] bg-white px-3 py-2 text-[16px] focus:border-secondary focus:outline-none">
+    {{ /if }}
+    {{ if error }}<p class="mt-1 text-[13px] text-[#c02b0a]">{{ error }}</p>{{ /if }}
+</div>

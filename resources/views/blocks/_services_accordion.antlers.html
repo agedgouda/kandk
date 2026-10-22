@@ -1,0 +1,23 @@
+<section class="flex flex-col lg:flex-row lg:pl-10">
+    <div class="px-5 py-[60px] lg:w-[64%] lg:px-[10px]">
+        <h2 class="font-serif text-[32px] leading-[1.25] text-primary md:text-[42px] md:leading-[54px]">{{ heading }}</h2>
+        <p class="mt-10 max-w-[800px] text-[20px] leading-7 md:text-[22px] md:leading-[28px]">{{ subheading }}</p>
+        <div class="mt-[60px] space-y-5" data-accordion>
+            {{ items }}
+                <div class="group" data-accordion-item>
+                    <button type="button" class="flex w-full items-center gap-2 border-t border-teal pt-[15px] text-left font-serif text-[24px] leading-[30px] text-primary md:text-[28px] md:leading-[34px]">
+                        {{ title }}
+                        <svg class="size-[14px] fill-current transition-transform group-data-open:rotate-90" viewBox="0 0 320 512" aria-hidden="true"><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg>
+                    </button>
+                    <div class="hidden p-[10px] pl-0 text-[16px] leading-6 group-data-open:block">
+                        {{ text }}
+                        {{ if url }} <a href="{{ url }}" class="text-secondary hover:text-primary">Learn more.</a>{{ /if }}
+                    </div>
+                </div>
+            {{ /items }}
+        </div>
+        {{ if closing }}<h3 class="mt-[60px] font-serif text-[24px] leading-[30px] text-primary md:text-[28px] md:leading-[34px]">{{ closing }}</h3>{{ /if }}
+        {{ if button_text }}<a href="{{ button_url }}" class="mt-5 inline-block rounded-[3px] bg-secondary px-6 py-3 text-[18px] leading-[18px] uppercase text-white transition-colors hover:bg-accent">{{ button_text }}</a>{{ /if }}
+    </div>
+    <div class="min-h-[400px] bg-cover bg-center lg:w-[36%]" style="background-image: url('{{ image:url }}')"></div>
+</section>

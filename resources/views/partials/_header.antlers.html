@@ -1,0 +1,45 @@
+<header class="fixed inset-x-0 top-0 z-40 bg-white">
+    <div class="flex h-[90px] items-center justify-between px-5 lg:h-[126px] lg:pr-[17px] lg:pl-[57px]">
+        <a href="/" class="shrink-0">
+            <img src="{{ settings:logo:url }}" alt="{{ site:name }}" class="h-auto w-[260px] lg:w-[502px]">
+        </a>
+
+        <nav class="hidden lg:block" aria-label="Main">
+            <ul class="flex items-center gap-[22px] text-[16px] leading-5 uppercase [word-spacing:1px]">
+                {{ nav:main }}
+                    <li class="group relative">
+                        <a href="{{ url }}" class="block py-[5px] pr-[11px] tracking-normal text-primary transition-colors group-hover:text-secondary">{{ title }}</a>
+                        {{ if children }}
+                            <ul class="invisible absolute top-full left-0 mt-[15px] bg-[#f3f5f8] opacity-0 transition-opacity duration-200 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100 before:absolute before:inset-x-0 before:-top-[15px] before:h-[15px]">
+                                {{ children }}
+                                    <li><a href="{{ url }}" class="block px-5 py-[14px] whitespace-nowrap text-primary hover:bg-[#f9fafd] hover:text-accent">{{ title }}</a></li>
+                                {{ /children }}
+                            </ul>
+                        {{ /if }}
+                    </li>
+                {{ /nav:main }}
+            </ul>
+        </nav>
+
+        <button type="button" class="p-2 text-[#467ff7] lg:hidden" data-menu-toggle aria-expanded="false" aria-controls="mobile-menu">
+            <span class="sr-only">Menu</span>
+            <svg class="size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+    </div>
+
+    <nav id="mobile-menu" class="hidden max-h-[calc(100dvh-90px)] overflow-y-auto bg-[#f3f5f8] lg:hidden" aria-label="Mobile">
+        <ul class="text-[16px] uppercase text-primary [&_a]:block [&_a]:px-5 [&_a]:py-[14px] [&_a:hover]:bg-[#f9fafd] [&_a:hover]:text-accent [&_ul_a]:pl-10">
+            {{ nav:main }}
+                <li>
+                    <a href="{{ url }}">{{ title }}</a>
+                    {{ if children }}
+                        <ul>
+                            {{ children }}<li><a href="{{ url }}">{{ title }}</a></li>{{ /children }}
+                        </ul>
+                    {{ /if }}
+                </li>
+            {{ /nav:main }}
+        </ul>
+    </nav>
+</header>
+<div class="h-[90px] lg:h-[126px]" aria-hidden="true"></div>

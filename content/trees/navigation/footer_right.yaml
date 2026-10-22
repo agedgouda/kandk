@@ -1,0 +1,29 @@
+tree:
+  -
+    id: 33b29302-9a78-4e7d-947f-875be6ec33e4
+    title: 'Useful Links'
+    url: /resources
+  -
+    id: 66f45e6e-4cff-48d7-82bf-a042883b99a1
+    title: 'Recent updates and Insights'
+    url: /recent-updates-and-insights
+  -
+    id: ce82500e-84a1-43c5-a83f-bcb5bab18dd5
+    title: Clientele
+    url: /clientele
+  -
+    id: acc4e2de-94d3-411a-ac04-e7aeb34c66b1
+    title: 'Case Studies'
+    url: /case-studies
+  -
+    id: d7190bab-4c60-4670-a6e9-d10c08f3a4c9
+    title: Testimonials
+    url: /testimonials
+  -
+    id: 57ba25c3-c820-4101-ab11-37b7d414d3b0
+    title: 'Contact Us'
+    url: /contact-us
+  -
+    id: fb01db99-d05d-4831-934b-6da035157122
+    title: Careers
+    url: /careers

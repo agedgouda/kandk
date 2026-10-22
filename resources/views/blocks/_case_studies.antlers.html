@@ -1,0 +1,10 @@
+<section class="mt-[100px] mb-[120px] px-5 md:mt-[150px] md:px-10">
+    {{ if heading }}<h2 class="font-serif text-[32px] leading-[1.25] text-primary md:text-[42px] md:leading-[54px]">{{ heading }}</h2>{{ /if }}
+    {{ if text }}<div class="mt-10 text-[16px] leading-6 [&_a]:text-[#333]">{{ text }}</div>{{ /if }}
+    <div class="-mx-[10px] mt-10 grid sm:grid-cols-2 lg:grid-cols-3" data-load-more="{{ per_page ?? 6 }}">
+        {{ collection:case_studies }}
+            {{ partial:case_study_card }}
+        {{ /collection:case_studies }}
+    </div>
+    {{ partial:load_more }}
+</section>

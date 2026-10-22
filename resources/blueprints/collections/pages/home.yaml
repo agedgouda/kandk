@@ -1,0 +1,286 @@
+title: Home
+hide: true
+order: 2
+tabs:
+  hero:
+    display: Hero
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              display: 'Page Title'
+              required: true
+          -
+            handle: slides
+            field:
+              type: grid
+              display: Slides
+              mode: stacked
+              add_row: 'Add Slide'
+              fields:
+                -
+                  handle: heading
+                  field:
+                    type: textarea
+                    display: Heading
+                    instructions: 'Press Enter for a line break.'
+                -
+                  handle: button
+                  field:
+                    type: text
+                    display: 'Button Text'
+                    width: 50
+                -
+                  handle: url
+                  field:
+                    type: text
+                    display: 'Link'
+                    instructions: 'Leave blank for no link.'
+                    width: 50
+                -
+                  handle: image
+                  field:
+                    type: assets
+                    display: 'Background Image'
+                    container: assets
+                    folder: home
+                    max_files: 1
+      -
+        display: Intro
+        fields:
+          -
+            handle: intro
+            field:
+              type: textarea
+              display: 'Intro Text'
+          -
+            handle: updates_title
+            field:
+              type: text
+              display: 'Recent Updates Heading'
+  why:
+    display: 'Why Choose'
+    sections:
+      -
+        fields:
+          -
+            handle: why_title
+            field:
+              type: text
+              display: Heading
+          -
+            handle: reasons
+            field:
+              type: grid
+              display: Boxes
+              mode: stacked
+              max_rows: 4
+              add_row: 'Add Box'
+              fields:
+                -
+                  handle: icon
+                  field:
+                    type: assets
+                    display: Icon
+                    container: assets
+                    folder: home
+                    max_files: 1
+                    width: 50
+                -
+                  handle: color
+                  field:
+                    type: select
+                    display: 'Background Color'
+                    width: 50
+                    options:
+                      bg-primary: 'Dark Blue'
+                      bg-secondary: 'Bright Blue'
+                      bg-teal: Teal
+                      bg-accent: 'Slate Blue'
+                -
+                  handle: title
+                  field:
+                    type: text
+                    display: Title
+                -
+                  handle: text
+                  field:
+                    type: textarea
+                    display: Text
+          -
+            handle: why_button
+            field:
+              type: text
+              display: 'Button Text'
+              width: 50
+          -
+            handle: why_url
+            field:
+              type: text
+              display: 'Button Link'
+              width: 50
+  services:
+    display: Services
+    sections:
+      -
+        fields:
+          -
+            handle: services_title
+            field:
+              type: text
+              display: Heading
+          -
+            handle: services
+            field:
+              type: grid
+              display: Services
+              mode: stacked
+              add_row: 'Add Service'
+              fields:
+                -
+                  handle: title
+                  field:
+                    type: text
+                    display: Title
+                -
+                  handle: text
+                  field:
+                    type: textarea
+                    display: Text
+                -
+                  handle: button
+                  field:
+                    type: text
+                    display: 'Button Text'
+                    width: 50
+                -
+                  handle: url
+                  field:
+                    type: text
+                    display: 'Button Link'
+                    width: 50
+      -
+        display: 'Industry Banner'
+        fields:
+          -
+            handle: cta_title
+            field:
+              type: text
+              display: Heading
+          -
+            handle: cta_text
+            field:
+              type: textarea
+              display: Text
+          -
+            handle: cta_button
+            field:
+              type: text
+              display: 'Button Text'
+              width: 50
+          -
+            handle: cta_url
+            field:
+              type: text
+              display: 'Button Link'
+              width: 50
+          -
+            handle: cta_image
+            field:
+              type: assets
+              display: 'Background Image'
+              container: assets
+              folder: home
+              max_files: 1
+  case_studies:
+    display: 'Case Studies'
+    sections:
+      -
+        fields:
+          -
+            handle: case_studies_title
+            field:
+              type: text
+              display: Heading
+          -
+            handle: case_studies_text
+            field:
+              type: markdown
+              display: Text
+              instructions: 'Wrap words in **double asterisks** for bold; use [text](/link) for links.'
+          -
+            handle: case_studies_note
+            field:
+              type: html
+              html: 'The cards come from the Case Studies collection.'
+  testimonial:
+    display: Testimonial
+    sections:
+      -
+        fields:
+          -
+            handle: testimonial
+            field:
+              type: entries
+              display: Testimonial
+              collections:
+                - testimonials
+              max_items: 1
+  careers:
+    display: Careers
+    sections:
+      -
+        fields:
+          -
+            handle: careers_title
+            field:
+              type: text
+              display: Heading
+          -
+            handle: careers_subtitle
+            field:
+              type: text
+              display: Subheading
+          -
+            handle: careers_text
+            field:
+              type: textarea
+              display: Text
+          -
+            handle: careers_button
+            field:
+              type: text
+              display: 'Button Text'
+              width: 50
+          -
+            handle: careers_url
+            field:
+              type: text
+              display: 'Button Link'
+              width: 50
+          -
+            handle: careers_image
+            field:
+              type: assets
+              display: 'Background Image'
+              container: assets
+              folder: home
+              max_files: 1
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+          -
+            handle: template
+            field:
+              type: template
+              display: Template

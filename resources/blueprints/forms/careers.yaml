@@ -1,0 +1,7 @@
+title: 'Job Applications'
+fields:
+  - { handle: first_name, field: { type: text, display: First, validate: [required], width: 50 } }
+  - { handle: last_name, field: { type: text, display: Last, validate: [required], width: 50 } }
+  - { handle: email, field: { type: text, input_type: email, display: Email, validate: [required, email, confirmed] } }
+  - { handle: email_confirmation, field: { type: text, input_type: email, display: 'Confirm Email', validate: [required] } }
+  - { handle: resume, field: { type: files, display: 'Upload Resume', max_files: 1, validate: [required, 'max:65536', 'mimes:pdf,doc,docx'] } }

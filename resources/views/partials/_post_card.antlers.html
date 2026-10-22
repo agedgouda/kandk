@@ -1,0 +1,11 @@
+<article class="p-[10px]">
+    <div class="h-full bg-white shadow-[0_0_10px_rgba(0,0,0,0.08)]">
+        <a href="{{ url }}" class="block"><img src="{{ image:url }}" alt="" class="aspect-[300/153] w-full object-cover"></a>
+        <div class="p-[15px]">
+            <p class="text-[14px] text-accent">{{ date format="d F Y" }}</p>
+            <h3 class="mt-1 font-serif text-[22px] leading-[30px]"><a href="{{ url }}" class="text-primary hover:text-secondary">{{ title }}</a></h3>
+            <p class="mt-3 text-[14px] leading-[21px]">{{ excerpt | truncate(110, '...') }}</p>
+            <a href="{{ url }}" class="block pt-5 text-[16px] leading-6 uppercase text-secondary hover:text-primary">Read More</a>
+        </div>
+    </div>
+</article>

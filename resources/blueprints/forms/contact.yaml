@@ -1,0 +1,10 @@
+title: 'Contact Us'
+fields:
+  - { handle: first_name, field: { type: text, display: First, validate: [required], width: 50 } }
+  - { handle: last_name, field: { type: text, display: Last, validate: [required], width: 50 } }
+  - { handle: company, field: { type: text, display: Company, validate: [required] } }
+  - { handle: job_title, field: { type: text, display: Title, validate: [required] } }
+  - { handle: email, field: { type: text, input_type: email, display: Email, validate: [required, email] } }
+  - { handle: phone, field: { type: text, input_type: tel, display: Phone, validate: [required] } }
+  - { handle: subject, field: { type: text, display: Subject, validate: [required] } }
+  - { handle: message, field: { type: textarea, display: 'Your Message', validate: [required] } }

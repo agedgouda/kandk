@@ -1,0 +1,194 @@
+title: Page
+order: 1
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              display: Title
+              required: true
+          -
+            handle: blocks
+            field:
+              type: replicator
+              display: 'Page Sections'
+              instructions: 'Add, remove and reorder the sections of this page.'
+              collapse: true
+              sets:
+                layout:
+                  display: Layout
+                  sets:
+                    banner:
+                      display: 'Page Banner'
+                      icon: media-image-picture-landscape
+                      fields:
+                        - { handle: image, field: { type: assets, display: 'Background Image', container: assets, folder: pages, max_files: 1 } }
+                        - { handle: heading, field: { type: textarea, display: Heading, instructions: 'Press Enter for a line break.' } }
+                    intro:
+                      display: 'Intro (gray box)'
+                      icon: text-formatting-heading-1
+                      fields:
+                        - { handle: heading, field: { type: text, display: Heading } }
+                        - { handle: heading_align, field: { type: button_group, display: 'Heading Alignment', options: { left: Left, center: Center }, default: left } }
+                        - { handle: text, field: { type: markdown, display: Text } }
+                        - { handle: button_text, field: { type: text, display: 'Button Text', width: 50 } }
+                        - { handle: button_url, field: { type: text, display: 'Button Link', width: 50 } }
+                    service_intro:
+                      display: 'Service Intro (with services sidebar)'
+                      icon: layout-col-2
+                      instructions: 'The sidebar lists the links from the "Services Sidebar" navigation.'
+                      fields:
+                        - { handle: heading, field: { type: text, display: Heading } }
+                        - { handle: text, field: { type: markdown, display: Text } }
+                    text_section:
+                      display: 'Heading + Text'
+                      icon: text-formatting-paragraph
+                      fields:
+                        - { handle: heading, field: { type: text, display: Heading } }
+                        - { handle: heading_style, field: { type: button_group, display: 'Heading Style', options: { small: 'Small (blue sans)', large: 'Large (serif)' }, default: small } }
+                        - { handle: text, field: { type: markdown, display: Text } }
+                    feature_list:
+                      display: 'Bullet List'
+                      icon: text-formatting-list-bullets
+                      fields:
+                        - { handle: heading, field: { type: text, display: 'Heading (optional)' } }
+                        - { handle: text, field: { type: markdown, display: 'Text Above List (optional)' } }
+                        - { handle: columns, field: { type: button_group, display: Columns, options: { '1': One, '2': Two }, default: '2' } }
+                        - handle: items
+                          field:
+                            type: grid
+                            display: Items
+                            add_row: 'Add Item'
+                            fields:
+                              - { handle: label, field: { type: text, display: 'Bold Label' } }
+                              - { handle: text, field: { type: textarea, display: Text } }
+                    note_band:
+                      display: 'Highlighted Statement (gray band)'
+                      icon: text-formatting-quote
+                      fields:
+                        - { handle: text, field: { type: textarea, display: Text } }
+                    rich_text:
+                      display: 'Rich Text'
+                      icon: text-formatting-paragraph
+                      fields:
+                        - { handle: content, field: { type: markdown, display: Content } }
+                        - { handle: image, field: { type: assets, display: 'Image (optional, shown on the right)', container: assets, folder: pages, max_files: 1 } }
+                content:
+                  display: 'Special Sections'
+                  sets:
+                    services_accordion:
+                      display: 'Services Accordion + Image'
+                      icon: layout-col-2
+                      fields:
+                        - { handle: heading, field: { type: text, display: Heading } }
+                        - { handle: subheading, field: { type: textarea, display: Subheading } }
+                        - handle: items
+                          field:
+                            type: grid
+                            display: Items
+                            add_row: 'Add Item'
+                            fields:
+                              - { handle: title, field: { type: text, display: Title } }
+                              - { handle: text, field: { type: textarea, display: Text } }
+                              - { handle: url, field: { type: text, display: 'Link (optional)' } }
+                        - { handle: closing, field: { type: textarea, display: 'Closing Text' } }
+                        - { handle: button_text, field: { type: text, display: 'Button Text', width: 50 } }
+                        - { handle: button_url, field: { type: text, display: 'Button Link', width: 50 } }
+                        - { handle: image, field: { type: assets, display: Image, container: assets, folder: pages, max_files: 1 } }
+                    image_text:
+                      display: 'Text + Image'
+                      icon: layout-col-2
+                      fields:
+                        - { handle: heading, field: { type: text, display: Heading } }
+                        - { handle: text, field: { type: markdown, display: Text } }
+                        - { handle: image, field: { type: assets, display: Image, container: assets, folder: pages, max_files: 1 } }
+                    industries:
+                      display: 'Industries List'
+                      icon: text-formatting-list-bullets
+                      fields:
+                        - { handle: heading, field: { type: text, display: Heading } }
+                        - { handle: items, field: { type: list, display: Industries } }
+                    team_member:
+                      display: 'Team Member'
+                      icon: users-multiple
+                      fields:
+                        - { handle: name, field: { type: text, display: Name, width: 50 } }
+                        - { handle: role, field: { type: text, display: Role, width: 50 } }
+                        - { handle: photo, field: { type: assets, display: Photo, container: assets, folder: team, max_files: 1 } }
+                        - { handle: email, field: { type: text, display: Email, width: 50 } }
+                        - { handle: linkedin, field: { type: text, display: 'LinkedIn URL', width: 50 } }
+                        - { handle: bio, field: { type: markdown, display: Bio } }
+                    case_studies:
+                      display: 'Case Studies Grid'
+                      icon: layout-grid
+                      instructions: 'Shows the entries from the Case Studies collection.'
+                      fields:
+                        - { handle: heading, field: { type: text, display: 'Heading (optional)' } }
+                        - { handle: text, field: { type: markdown, display: 'Text (optional)' } }
+                    posts_grid:
+                      display: 'Recent Updates Grid'
+                      icon: layout-grid
+                      instructions: 'Shows posts from the Recent Updates & Insights collection, newest first.'
+                      fields:
+                        - { handle: heading, field: { type: text, display: 'Heading (optional)' } }
+                        - { handle: per_page, field: { type: integer, display: 'Posts shown before Load More', default: 6 } }
+                    testimonial:
+                      display: Testimonial
+                      icon: chat-bubble-text
+                      fields:
+                        - { handle: testimonial, field: { type: entries, display: Testimonial, collections: [testimonials], max_items: 1 } }
+                    testimonials_list:
+                      display: 'All Testimonials'
+                      icon: chat-bubble-text
+                      fields:
+                        - { handle: note, field: { type: html, html: 'Shows every entry from the Testimonials collection.' } }
+                    cta_banner:
+                      display: 'Call to Action Banner'
+                      icon: alert-alarm-bell
+                      fields:
+                        - { handle: heading, field: { type: text, display: Heading } }
+                        - { handle: button_text, field: { type: text, display: 'Button Text', width: 50 } }
+                        - { handle: button_url, field: { type: text, display: 'Button Link', width: 50 } }
+                        - { handle: image, field: { type: assets, display: 'Background Image', container: assets, folder: pages, max_files: 1 } }
+                    careers_banner:
+                      display: 'Careers Banner'
+                      icon: users-multiple
+                      fields:
+                        - { handle: image, field: { type: assets, display: 'Background Image', container: assets, folder: pages, max_files: 1 } }
+                        - { handle: title, field: { type: text, display: Heading } }
+                        - { handle: subtitle, field: { type: text, display: Subheading } }
+                        - { handle: text, field: { type: textarea, display: Text } }
+                        - { handle: button_text, field: { type: text, display: 'Button Text', width: 50 } }
+                        - { handle: button_url, field: { type: text, display: 'Button Link', width: 50 } }
+                    contact:
+                      display: 'Contact Form + Details'
+                      icon: mail
+                      fields:
+                        - { handle: heading, field: { type: text, display: 'Details Heading' } }
+                        - { handle: map_heading, field: { type: text, display: 'Map Heading' } }
+                    application_form:
+                      display: 'Job Application Form'
+                      icon: file-content-list
+                      fields:
+                        - { handle: heading, field: { type: text, display: Heading } }
+                        - { handle: text, field: { type: textarea, display: Text } }
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+          -
+            handle: template
+            field:
+              type: template
+              display: Template

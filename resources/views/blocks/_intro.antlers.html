@@ -1,0 +1,11 @@
+<section class="bg-mist px-5 py-[100px] md:px-10 md:pt-[130px] md:pb-[130px]">
+    <div class="px-[10px] {{ heading_align == 'center' ? 'text-center' : '' }}">
+        <h2 class="font-serif text-[32px] leading-[1.25] text-primary md:text-[42px] md:leading-[54px]">{{ heading }}</h2>
+    </div>
+    <div class="mt-[60px] px-[10px] text-[20px] leading-[30px] text-primary md:text-[22px] md:leading-[33px] [&_p+p]:mt-5">{{ text }}</div>
+    {{ if button_text }}
+        <div class="mt-20 px-[10px] text-right">
+            <a href="{{ button_url }}" class="inline-block rounded-[3px] bg-secondary px-6 py-3 text-[18px] leading-[18px] uppercase text-white transition-colors hover:bg-accent">{{ button_text }}</a>
+        </div>
+    {{ /if }}
+</section>

@@ -1,0 +1,7 @@
+<section class="{{ spacing ?? 'mt-20' }} bg-secondary px-5 py-[100px] text-center text-white md:px-[50px] md:py-[150px]">
+    <p class="mb-5 font-serif text-[24px] leading-[1.45] md:text-[32px] md:leading-[46px]">
+        {{ if intro }}{{ intro }}<br>“{{ quote }}”{{ else }}{{ quote }}{{ /if }}
+    </p>
+    <div class="font-serif text-[22px] leading-[33px] font-medium">{{ title }}</div>
+    <div class="text-[16px] leading-6">{{ company }}{{ if description }}<br>{{ description }}{{ /if }}</div>
+</section>

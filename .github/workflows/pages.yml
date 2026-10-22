@@ -1,0 +1,66 @@
+# Builds the static demo and publishes it to GitHub Pages on every push to main.
+# Set the repo variable SITE_URL (Settings → Secrets and variables → Actions → Variables)
+# to the custom domain, e.g. https://demo.example.com, and set Pages → Source to "GitHub Actions".
+name: Deploy static demo
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.5'
+          extensions: gd, intl, exif
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+          cache: npm
+
+      - run: composer install --no-interaction --prefer-dist --no-progress
+
+      - name: Prepare environment
+        run: |
+          cp .env.example .env
+          php artisan key:generate --force
+
+      - run: npm ci
+      - run: npm run build
+
+      - name: Generate static site
+        env:
+          APP_ENV: production
+          APP_DEBUG: 'false'
+          APP_URL: ${{ vars.SITE_URL }}
+          STATIC_DEMO: 'true'
+        run: php please ssg:generate
+
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: storage/app/static
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5

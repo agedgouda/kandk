@@ -1,0 +1,28 @@
+<article class="px-5 pt-[49px] md:px-10">
+    <h1 class="mx-auto max-w-[650px] text-center font-serif text-[36px] leading-[46px] font-medium text-primary md:text-[52px] md:leading-[62px]">{{ title }}</h1>
+    {{ if image }}<img src="{{ image:url }}" alt="" class="mx-auto mt-[70px] aspect-[3/2] w-full max-w-[1150px] object-cover">{{ /if }}
+    <div class="prose-kk mx-auto mt-[50px] max-w-[1150px] [&_p]:mb-5">{{ content }}</div>
+</article>
+
+<section class="mx-auto mt-10 max-w-[1200px] px-5 md:px-[25px]">
+    <h2 class="px-[10px] text-[18px] leading-[54px] font-light text-primary">More Case Studies</h2>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3" data-load-more="3">
+        {{ collection:case_studies :id:not="id" }}
+            {{ partial:case_study_card }}
+        {{ /collection:case_studies }}
+    </div>
+    {{ partial:load_more }}
+
+    <nav class="mt-10 flex justify-between gap-6 border-t border-[#bbcfdb] px-[10px] py-8 text-[16px] leading-6" aria-label="Case study navigation">
+        <div>
+            {{ collection:previous in="case_studies" limit="1" }}
+                <a href="{{ url }}" class="group block text-primary"><span class="block text-[14px] uppercase text-secondary">&lsaquo; Previous</span>{{ title }}</a>
+            {{ /collection:previous }}
+        </div>
+        <div class="text-right">
+            {{ collection:next in="case_studies" limit="1" }}
+                <a href="{{ url }}" class="group block text-primary"><span class="block text-[14px] uppercase text-secondary">Next &rsaquo;</span>{{ title }}</a>
+            {{ /collection:next }}
+        </div>
+    </nav>
+</section>

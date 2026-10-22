@@ -1,0 +1,37 @@
+---
+id: 47a34c44-490b-4592-a7c6-a3ef483e7246
+blueprint: page
+title: 'Recent Updates & Insights'
+blocks:
+  -
+    id: f9544b5c
+    type: banner
+    enabled: true
+    image: pages/casestudies.png
+    heading: 'Recent Updates & Insights'
+  -
+    id: 5a51ae7f
+    type: rich_text
+    enabled: true
+    content: "As an independent member of the BDO Alliance USA, Kaufman & Kabani continuously benefits from the latest updates and insights from one of the world's leading accounting and consulting networks. This affiliation grants us real-time access to advanced tools, cutting-edge research, and specialized knowledge in areas like innovation, AI, tax policy changes, and complex regulatory shifts. These critical insights empower us to provide you with the most current, effective, and forward-thinking accounting, tax, and business strategies, ensuring your business remains agile and competitive in today's dynamic economic landscape."
+    image: pages/bdo.png
+  -
+    id: 570b56e7
+    type: posts_grid
+    enabled: true
+    per_page: 6
+  -
+    id: 5ab8af44
+    type: cta_banner
+    enabled: true
+    heading: 'See how we can Assist you Today!'
+    button_text: 'Contact Us'
+    button_url: /contact-us
+    image: pages/CTA-1024x480.webp
+  -
+    id: 26d14354
+    type: testimonial
+    enabled: true
+    testimonial:
+      - 5d69a8f7-bb25-4134-a7a0-5b926035f62a
+---

@@ -1,0 +1,27 @@
+title: 'Case Study'
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field: { type: text, display: Title, required: true }
+          -
+            handle: image
+            field: { type: assets, display: Image, container: assets, folder: blog, max_files: 1 }
+          -
+            handle: excerpt
+            field: { type: textarea, display: 'Short Summary', instructions: 'Shown on the case study cards.' }
+          -
+            handle: content
+            field: { type: bard, display: Content, buttons: [h2, h3, bold, italic, unorderedlist, orderedlist, quote, anchor], save_html: false }
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field: { type: slug, localizable: true }

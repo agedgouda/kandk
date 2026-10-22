@@ -1,0 +1,9 @@
+<section class="mx-auto max-w-[1440px] px-5 py-[60px] md:px-[30px]">
+    {{ if heading }}<h2 class="px-[10px] font-serif text-[32px] leading-[1.25] text-primary md:text-[42px] md:leading-[54px]">{{ heading }}</h2>{{ /if }}
+    <div class="mt-5 grid sm:grid-cols-2 lg:grid-cols-3" data-load-more="{{ per_page ?? 6 }}">
+        {{ collection:posts }}
+            {{ partial:post_card }}
+        {{ /collection:posts }}
+    </div>
+    {{ partial:load_more }}
+</section>

@@ -1,0 +1,31 @@
+@import "tailwindcss";
+@source "../views";
+@source "../../content";
+
+@theme {
+    --font-serif: "Gelasio", ui-serif, Georgia, serif;
+    --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+
+    --color-primary: #15517d;
+    --color-secondary: #0f8bb8;
+    --color-accent: #5b849f;
+    --color-teal: #357e98;
+    --color-mist: #f2f5f6;
+    --color-body: #464646;
+}
+
+/* Body copy written in the control panel (markdown fields) */
+@utility prose-kk {
+    font-size: 16px;
+    line-height: 24px;
+
+    & h2 { margin: 40px 0 16px; font-family: var(--font-serif); font-size: 32px; line-height: 1.3; color: var(--color-primary); }
+    & h3 { margin: 32px 0 12px; font-size: 22px; line-height: 34px; color: var(--color-primary); }
+    & h2:first-child, & h3:first-child { margin-top: 0; }
+    & p, & ul, & ol { margin-bottom: 16px; }
+    & ul { list-style: disc; padding-left: 24px; }
+    & ol { list-style: decimal; padding-left: 24px; }
+    & strong { font-weight: 700; color: var(--color-primary); }
+    & a { color: var(--color-secondary); }
+    & a:hover { color: var(--color-primary); }
+}

@@ -1,0 +1,22 @@
+title: Testimonial
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field: { type: text, display: 'Name & Title', instructions: 'e.g. Michael Chase, President', required: true }
+          -
+            handle: company
+            field: { type: text, display: Company, width: 50 }
+          -
+            handle: description
+            field: { type: text, display: 'Company Description', width: 50 }
+          -
+            handle: intro
+            field: { type: text, display: 'Intro Line', instructions: 'Optional line shown above the quote, e.g. "Manufacturer of fashion clothing."' }
+          -
+            handle: quote
+            field: { type: textarea, display: Quote }

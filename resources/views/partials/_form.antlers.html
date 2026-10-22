@@ -1,0 +1,16 @@
+{{ form:create :in="form" files="{{ files ?? false }}" class="grid gap-5 sm:grid-cols-2" }}
+    {{ if success }}
+        <div class="bg-mist p-5 text-primary sm:col-span-2">Thank you. Your submission has been received.</div>
+    {{ else }}
+        {{ fields }}
+            {{ partial:form_field }}
+        {{ /fields }}
+        <div class="hidden" aria-hidden="true"><input type="text" name="{{ honeypot }}" tabindex="-1" autocomplete="off"></div>
+        {{ if config:app.static_demo }}
+            <p class="bg-mist p-4 text-[14px] text-primary sm:col-span-2">This is a demo site, so the form can't be sent.</p>
+        {{ /if }}
+        <div class="sm:col-span-2">
+            <button type="submit" {{ if config:app.static_demo }}disabled{{ /if }} class="rounded-[3px] bg-secondary px-6 py-3 text-[18px] leading-[18px] uppercase text-white transition-colors hover:bg-accent disabled:opacity-50">Submit</button>
+        </div>
+    {{ /if }}
+{{ /form:create }}

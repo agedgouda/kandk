@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="{{ site:short_locale }}">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noindex, nofollow, noarchive, noimageindex, noai, noimageai">
+        <title>{{ (title ?? site:name) | sanitize }}</title>
+        <link rel="icon" href="/images/kk/KK_Favicon.png">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Gelasio:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+        {{ vite src="resources/js/site.js|resources/css/site.css" }}
+    </head>
+    <body class="bg-white font-sans text-base leading-6 tracking-[-0.1px] text-body antialiased">
+        <a href="#content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:bg-white focus:px-4 focus:py-2">Skip to content</a>
+
+        {{ partial:header }}
+
+        <main id="content">
+            {{ template_content }}
+        </main>
+
+        {{ partial:footer }}
+    </body>
+</html>

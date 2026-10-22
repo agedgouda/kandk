@@ -1,0 +1,5 @@
+title: 'Case Studies'
+route: '/{slug}'
+template: case_study
+structure:
+  max_depth: 1

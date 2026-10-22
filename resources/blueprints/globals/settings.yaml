@@ -1,0 +1,42 @@
+title: 'Site Settings'
+tabs:
+  header:
+    display: Header
+    sections:
+      -
+        fields:
+          -
+            handle: logo
+            field: { type: assets, display: 'Header Logo', container: assets, folder: home, max_files: 1 }
+  footer:
+    display: Footer
+    sections:
+      -
+        fields:
+          -
+            handle: footer_logo
+            field: { type: assets, display: 'Footer Logo', container: assets, folder: home, max_files: 1 }
+          -
+            handle: address
+            field: { type: textarea, display: Address }
+          -
+            handle: phone
+            field: { type: text, display: Phone, width: 50 }
+          -
+            handle: fax
+            field: { type: text, display: Fax, width: 50 }
+          -
+            handle: linkedin
+            field: { type: text, display: 'LinkedIn URL' }
+          -
+            handle: quick_links_title
+            field: { type: text, display: 'Quick Links Heading', instructions: 'The links themselves are edited under Navigation.' }
+          -
+            handle: copyright
+            field: { type: text, display: 'Copyright Text' }
+          -
+            handle: privacy_url
+            field: { type: text, display: 'Privacy Policy Link', width: 50 }
+          -
+            handle: disclaimer_url
+            field: { type: text, display: 'Legal Disclaimer Link', width: 50 }
