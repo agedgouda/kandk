@@ -1,9 +1,9 @@
-<section class="{{ background == 'gray' ? 'bg-mist pt-5 pb-[10px] md:pt-[10px]' : 'mt-5' }} px-[10px] md:px-10" style="--col1: {{ first_column_width !== null ? first_column_width : 680 }}px">
+<section class="{{ background == 'gray' ? 'bg-mist pt-5 pb-[10px] md:pt-[10px]' : 'mt-[var(--above-phone)] md:mt-[var(--above)]' }} px-[10px] md:px-10" style="--col1: {{ first_column_width !== null ? first_column_width : 680 }}px; --above: {{ space_above !== null ? space_above : 20 }}px; --above-phone: {{ space_above_phone !== null ? space_above_phone : 20 }}px">
     {{ if heading }}<h3 class="px-5 text-[22px] leading-[51px] text-primary md:px-[10px] md:leading-[54px] {{ text ? '' : 'mb-[28px]' }}">{{ heading }}</h3>{{ /if }}
     {{ if text }}<div class="mb-5 px-[10px] text-[16px] leading-6">{{ text }}</div>{{ /if }}
     {{# Two columns: first half on the left, like the live site #}}
     {{ half = items | count | divide(2) | floor }}
-    <div class="{{ columns == '1' ? '' : 'grid md:grid-cols-[var(--col1)_1fr]' }} {{ style == 'plain' ? 'max-md:gap-5' : '' }}">
+    <div class="{{ columns == '1' ? '' : 'grid md:grid-cols-[calc(50%+var(--col1)-680px)_1fr] lg:grid-cols-[var(--col1)_1fr]' }} {{ style == 'plain' ? 'max-md:gap-5' : '' }}">
         <ul>
             {{ items }}{{ if columns == '1' || index < half }}
                 <li class="flex gap-1 px-[10px] {{ style == 'plain' ? '[&+&]:mt-5' : 'pb-[12.5px] [&+&]:border-t [&+&]:border-[#bbcfdb] [&+&]:pt-[12.5px]' }}">

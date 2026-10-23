@@ -1,0 +1,79 @@
+# Pages CMS (https://app.pagescms.org): a free online editor for the blog.
+# Saving a post commits it to GitHub, which rebuilds the static site in about 2-3 minutes.
+media:
+  # Featured images are saved as "blog/<file>", the path Statamic's asset field expects
+  - name: featured
+    label: Featured images
+    input: public/assets/blog
+    output: blog
+    categories: [image]
+    rename: safe
+  # Images placed inside a post's text need the full web address
+  - name: post_images
+    label: Images in posts
+    input: public/assets/blog
+    output: /assets/blog
+    categories: [image]
+    rename: safe
+
+content:
+  - name: posts
+    label: Blog Posts
+    type: collection
+    path: content/collections/posts
+    filename: "{primary}.md"
+    view:
+      fields: [title, publish_date, published]
+      primary: title
+      sort: [publish_date, title]
+      default:
+        sort: publish_date
+        order: desc
+    fields:
+      - name: id
+        type: uuid
+        hidden: true
+      - name: title
+        label: Title
+        type: string
+        required: true
+        description: The post's web address is made from this title when the post is first saved.
+      - name: publish_date
+        label: Date
+        type: date
+        required: true
+        description: Posts are listed newest first.
+        options:
+          format: yyyy-MM-dd
+      - name: published
+        label: Show on the website
+        type: boolean
+        default: true
+        description: Turn off to keep this post as a draft.
+      - name: image
+        label: Featured image
+        type: image
+        description: Shown at the top of the post and in the post lists. Wide photos work best.
+        options:
+          media: featured
+      - name: excerpt
+        label: Short summary
+        type: text
+        description: One or two sentences, shown in the post lists.
+      - name: source_url
+        label: Original article link (optional)
+        type: string
+        description: If filled in, the post shows a "Read the full article" button linking here.
+      - name: body
+        label: Post text
+        type: rich-text
+        options:
+          format: markdown
+          media: post_images
+
+settings:
+  content:
+    # Keep fields the editor doesn't show (like Statamic's "blueprint") when a post is saved
+    merge: true
+  commit:
+    identity: user

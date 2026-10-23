@@ -75,6 +75,8 @@ blocks:
         id: be0b042f
         label: 'Transactional Services:'
         text: 'Expert guidance on mergers, acquisitions, and other complex business transactions.'
+    space_above: 50
+    space_above_phone: 35
   -
     id: '77912730'
     type: note_band

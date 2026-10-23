@@ -63,6 +63,9 @@
 }
 
 @theme {
+    /* Same switch points as the live site: phone up to 767px, tablet 768-1024px, desktop from 1025px */
+    --breakpoint-lg: 64.0625rem;
+
     --font-serif: "Gelasio", ui-serif, Georgia, serif;
     --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
     /* Some live-site widgets fall back to the device font; matched where they do */

@@ -85,6 +85,8 @@ blocks:
         label: 'Monitoring of Action Plans:'
         text: 'Tracking progress and ensuring accountability to achieve your strategic goals.'
     first_column_width: 700
+    space_above: 30
+    space_above_phone: 35
   -
     id: 7f2e7b1e
     type: note_band

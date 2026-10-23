@@ -2,6 +2,8 @@
 id: fa2e6205-5096-4cea-aff2-b70a3d0ed965
 blueprint: post
 title: 'Agentic AI: Transforming Business Operations'
+publish_date: '2025-05-30'
+published: true
 image: blog/AI-technology-1.webp
 excerpt: 'Agentic AI is transforming business operations by enabling systems to understand context, learn from interactions, and take independent actions. This comprehensive guide offers a roadmap to leverage agentic AI for...'
 source_url: 'https://kkcpa.com/test-case-study-2/'

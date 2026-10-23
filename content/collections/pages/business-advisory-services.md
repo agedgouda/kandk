@@ -72,6 +72,8 @@ blocks:
         id: '7346e896'
         label: 'Training & User Support:'
         text: 'Offering comprehensive training programs and ongoing technical support to ensure user proficiency and system uptime.'
+    space_above: 50
+    space_above_phone: 35
   -
     id: ce36d741
     type: note_band

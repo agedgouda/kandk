@@ -1,8 +1,6 @@
 title: 'Recent Updates & Insights'
 route: '/{slug}'
 template: post
-date: true
+# Dates live in the publish_date field (not the filename) so posts saved from Pages CMS can change their date
+sort_by: publish_date
 sort_dir: desc
-date_behavior:
-  past: public
-  future: private

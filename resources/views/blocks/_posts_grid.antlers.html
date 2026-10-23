@@ -1,7 +1,7 @@
 <section class="{{ columns == '4' ? 'px-0' : 'px-[10px]' }} pt-[var(--above-phone)] md:px-[30px] md:pt-[var(--above)]" style="--above: {{ space_above !== null ? space_above : 39 }}px; --above-phone: {{ space_above_phone !== null ? space_above_phone : 41 }}px">
     {{ if heading }}<h2 class="px-[10px] font-serif text-[32px] leading-[1.25] text-primary md:text-[42px] md:leading-[54px]">{{ heading }}</h2>{{ /if }}
     <div class="grid sm:grid-cols-2 {{ columns == '4' ? 'lg:grid-cols-4' : 'lg:grid-cols-3' }}" {{ if load_more }}data-load-more="{{ per_page !== null ? per_page : 6 }}"{{ /if }}>
-        {{ collection:posts sort="date:desc|title:desc" :limit="load_more ? null : (per_page ?? 6)" }}
+        {{ collection:posts sort="publish_date:desc|title:desc" :limit="load_more ? null : (per_page ?? 6)" }}
             {{ partial:post_card :compact="columns == '4'" }}
         {{ /collection:posts }}
     </div>

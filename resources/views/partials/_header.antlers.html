@@ -1,7 +1,7 @@
 <header class="fixed inset-x-0 top-0 z-40 bg-white">
-    <div class="mb-[28px] flex h-[65px] items-center justify-between px-[5%] lg:mb-0 lg:h-[126px] lg:pr-[17px] lg:pl-[57px]">
+    <div class="mb-[28px] flex h-[65px] items-center justify-between px-[5%] md:mb-0 md:h-[106px] md:items-start md:px-5 md:pt-5 lg:h-[126px] lg:items-center lg:pt-0 lg:pr-[17px] lg:pl-[57px]">
         <a href="/" class="shrink-0">
-            {{ partial:img :image="settings:logo" widths="520,1004" sizes="(min-width: 1024px) 502px, 246px" :alt="site:name" class="h-auto w-[246px] lg:w-[502px]" eager="true" }}
+            {{ partial:img :image="settings:logo" widths="520,1004" sizes="(min-width: 1025px) 502px, (min-width: 768px) 426px, 246px" :alt="site:name" class="h-auto w-[246px] md:w-[426px] lg:w-[502px]" eager="true" }}
         </a>
 
         <nav class="hidden lg:block" aria-label="Main">
@@ -23,7 +23,7 @@
 
         <button type="button" class="p-[5px] lg:hidden" data-menu-toggle aria-expanded="false" aria-controls="mobile-menu">
             <span class="sr-only">Menu</span>
-            <svg class="size-5 fill-primary" viewBox="0 0 1000 1000" aria-hidden="true"><path d="M104 333H896C929 333 958 304 958 271S929 208 896 208H104C71 208 42 237 42 271S71 333 104 333ZM104 583H896C929 583 958 554 958 521S929 458 896 458H104C71 458 42 487 42 521S71 583 104 583ZM104 833H896C929 833 958 804 958 771S929 708 896 708H104C71 708 42 737 42 771S71 833 104 833Z"/></svg>
+            <svg class="size-5 fill-primary md:size-[23px]" viewBox="0 0 1000 1000" aria-hidden="true"><path d="M104 333H896C929 333 958 304 958 271S929 208 896 208H104C71 208 42 237 42 271S71 333 104 333ZM104 583H896C929 583 958 554 958 521S929 458 896 458H104C71 458 42 487 42 521S71 583 104 583ZM104 833H896C929 833 958 804 958 771S929 708 896 708H104C71 708 42 737 42 771S71 833 104 833Z"/></svg>
         </button>
     </div>
 
@@ -42,4 +42,4 @@
         </ul>
     </nav>
 </header>
-<div class="h-[93px] lg:h-[126px]" aria-hidden="true"></div>
+<div class="h-[93px] md:h-[106px] lg:h-[126px]" aria-hidden="true"></div>

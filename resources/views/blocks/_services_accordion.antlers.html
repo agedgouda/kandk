@@ -1,7 +1,7 @@
-<section class="flex flex-col lg:flex-row lg:pl-10">
-    <div class="px-5 pt-[45px] pb-[30px] md:pt-[60px] lg:w-[65.07%] lg:px-[10px]">
+<section class="flex flex-col md:flex-row md:pl-10">
+    <div class="px-5 pt-[45px] pb-[30px] md:w-[65.07%] md:px-[10px] md:pt-[60px]">
         <h2 class="text-[22px] leading-[51px] text-primary md:font-serif md:text-[42px] md:leading-[54px]">{{ heading }}</h2>
-        <p class="mt-[30px] max-w-[800px] text-[16px] leading-[22.4px] md:mt-10 md:text-[22px] md:leading-[28px]">{{ subheading }}</p>
+        <p class="mt-[30px] max-w-[800px] md:max-lg:max-w-[85%] text-[16px] leading-[22.4px] md:mt-10 md:text-[22px] md:leading-[28px]">{{ subheading }}</p>
         <div class="mt-5 space-y-5 md:mt-[60px]" data-accordion>
             {{ items }}
                 <div class="group" data-accordion-item>
@@ -20,5 +20,5 @@
         {{ if button_text }}<div class="mt-5 text-center md:text-left"><a href="{{ button_url }}" class="inline-block rounded-[3px] bg-secondary px-6 py-3 text-[18px] leading-[18px] uppercase text-white transition-colors hover:bg-accent">{{ button_text }}</a></div>{{ /if }}
     </div>
     {{# The live site hides this image on phones #}}
-    <div class="relative hidden min-h-[400px] md:block lg:w-[34.93%]">{{ partial:img :image="image" sizes="(min-width: 1024px) 35vw, 100vw" class="absolute inset-0 size-full object-cover" }}</div>
+    <div class="relative hidden min-h-[400px] md:block md:w-[34.93%]">{{ partial:img :image="image" sizes="(min-width: 768px) 35vw, 100vw" class="absolute inset-0 size-full object-cover" }}</div>
 </section>

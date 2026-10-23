@@ -74,6 +74,8 @@ blocks:
         id: '50232e42'
         label: 'Cost Segregation & Depreciation Studies:'
         text: 'Identifying opportunities to accelerate depreciation and enhance cash flow.'
+    space_above: 50
+    space_above_phone: 35
   -
     id: 5cb7bea2
     type: feature_list

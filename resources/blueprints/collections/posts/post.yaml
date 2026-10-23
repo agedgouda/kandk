@@ -19,7 +19,7 @@ tabs:
             field: { type: text, display: 'Original Article Link', instructions: 'If set, the post page links here to read the full article.' }
           -
             handle: content
-            field: { type: bard, display: Content, buttons: [h2, h3, bold, italic, unorderedlist, orderedlist, quote, anchor], save_html: false }
+            field: { type: markdown, display: Content }
   sidebar:
     display: Sidebar
     sections:
@@ -29,5 +29,5 @@ tabs:
             handle: slug
             field: { type: slug, localizable: true }
           -
-            handle: date
-            field: { type: date, display: Date, required: true }
+            handle: publish_date
+            field: { type: date, display: Date, required: true, format: Y-m-d }

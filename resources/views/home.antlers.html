@@ -1,10 +1,10 @@
 {{# Hero slider: fade + ken burns, arrows only #}}
-<section class="relative h-[318px] overflow-hidden bg-primary md:mt-[49px] md:h-[550px]" data-slider>
+<section class="relative h-[318px] overflow-hidden bg-primary md:h-[550px] lg:mt-[49px]" data-slider>
     {{ slides }}
         <div class="absolute inset-0 transition-opacity duration-[2000ms] {{ first ? 'opacity-100' : 'pointer-events-none opacity-0' }}" data-slide>
             {{ partial:img :image="image" sizes="100vw" :priority="first" class="absolute inset-0 size-full object-cover transition-transform duration-[5400ms] ease-linear" extra="data-slide-bg" }}
             <{{ url ? 'a' : 'div' }} {{ if url }}href="{{ url }}"{{ /if }} class="relative flex h-full items-center px-[30px] md:pr-12 md:pl-[100px]">
-                <div class="max-w-[306px] [text-shadow:0_0_15px_rgba(0,0,0,0.3)] md:max-w-[615px]">
+                <div class="max-w-[306px] [text-shadow:0_0_15px_rgba(0,0,0,0.3)] md:max-w-[min(615px,64.3vw)]">
                     <h2 class="mb-5 font-serif text-[38px] leading-[38px] text-white md:mb-[30px] md:text-[52px] md:leading-[62px] md:font-medium">{{ heading | nl2br }}</h2>
                     {{ if button }}<span class="inline-block rounded-[3px] border-2 border-secondary bg-secondary px-6 py-3 text-[16px] leading-4 uppercase [word-spacing:1px] text-white transition-colors [text-shadow:none] hover:bg-accent">{{ button }}</span>{{ /if }}
                 </div>
@@ -21,14 +21,14 @@
 </section>
 
 {{# Intro + Recent updates #}}
-<section class="mt-20 flex flex-col px-[10px] py-[10px] lg:flex-row">
-    <div class="pr-[33px] pb-[70px] md:px-5 lg:w-[62.4%] lg:pt-0 lg:pr-[60px] lg:pb-0 lg:pl-10">
+<section class="mt-20 flex flex-col px-[10px] py-[10px] md:flex-row">
+    <div class="pr-[33px] pb-[70px] md:w-[62.4%] md:pt-0 md:pr-[60px] md:pb-0 md:pl-10">
         <h2 class="text-center font-serif text-[30px] leading-[48px] text-primary md:text-left md:text-[42px] md:leading-[54px]">{{ intro }}</h2>
     </div>
-    <div class="self-start bg-mist p-[10px] lg:w-[37.6%]">
+    <div class="self-start bg-mist p-[10px] md:w-[37.6%]">
         <h2 class="mb-5 font-serif text-[28px] leading-[34px] text-primary">{{ updates_title }}</h2>
         <div data-accordion>
-            {{ collection:posts limit="9" sort="date:desc|title:desc" }}
+            {{ collection:posts limit="9" sort="publish_date:desc|title:desc" }}
                 <div class="group" data-accordion-item {{ first ? 'data-open' : '' }}>
                     <button type="button" class="flex min-h-[50px] w-full items-stretch bg-secondary text-left text-white group-data-open:bg-primary">
                         <span class="flex w-[50px] shrink-0 items-center justify-center bg-primary group-data-open:bg-secondary">
@@ -38,10 +38,10 @@
                         <span class="flex items-center px-5 py-[1px] font-system text-[16px] leading-6 tracking-normal">{{ title }}</span>
                     </button>
                     <div class="hidden bg-mist p-[30px] group-data-open:block">
-                        <a href="{{ url }}" class="block" tabindex="-1" aria-hidden="true">{{ partial:img :image="image" widths="400,800" sizes="(min-width: 1024px) 30vw, 100vw" class="h-[200px] w-full object-cover" }}</a>
+                        <a href="{{ url }}" class="block" tabindex="-1" aria-hidden="true">{{ partial:img :image="image" widths="400,800" sizes="(min-width: 768px) 30vw, 100vw" class="h-[200px] w-full object-cover" }}</a>
                         <div class="mt-[30px]">
-                            <div class="text-[16px] leading-6 text-black">{{ title }}</div>
-                            <div class="mt-[10px] font-system text-[16px] leading-4 tracking-normal text-body">{{ date format="d F Y" }}</div>
+                            <div class="font-system text-[16px] leading-6 tracking-normal text-black">{{ title }}</div>
+                            <div class="mt-[10px] font-system text-[16px] leading-4 tracking-normal text-body">{{ publish_date format="d F Y" }}</div>
                             {{ if excerpt }}<div class="mt-[10px] font-system text-[16px] leading-6 tracking-normal text-[#666]">{{ excerpt | truncate(110, '...') }}</div>{{ /if }}
                             <a href="{{ url }}" class="mt-5 inline-block bg-primary p-[5px] font-system text-[16px] leading-6 tracking-normal text-white transition-colors hover:bg-secondary">Read More<span class="sr-only">: {{ title }}</span></a>
                         </div>
@@ -55,7 +55,7 @@
 {{# Why choose #}}
 <section>
     <h2 class="px-[10px] pt-[103px] font-serif text-[32px] leading-[54px] text-primary md:pt-[70px] md:pl-[50px] md:text-[42px]">{{ why_title }}</h2>
-    <div class="mt-4 grid sm:grid-cols-2 md:mt-[90px] md:gap-5 md:px-5 lg:grid-cols-4 lg:px-10">
+    <div class="mt-4 grid sm:grid-cols-2 md:mt-[90px] md:grid-cols-4 md:gap-5 md:px-10">
         {{ reasons }}
             <div class="{{ color }} p-[25px] text-center text-white lg:min-h-[391px]">
                 {{ partial:img :image="icon" widths="102,204,306" sizes="(min-width: 768px) 83px, 102px" class="mx-auto size-[102px] md:size-[83px]" }}
@@ -74,9 +74,9 @@
 {{# Services #}}
 <section class="bg-mist pt-[43px] pb-5 md:px-[60px] md:pt-[60px] md:pb-[100px]">
     <h2 class="text-center font-serif text-[32px] leading-[54px] text-primary md:mt-[50px] md:text-[42px]">{{ services_title }}</h2>
-    <div class="mt-[47px] grid gap-x-5 gap-y-10 px-5 md:mt-10 md:grid-cols-2 md:gap-y-[60px] md:px-0 lg:grid-cols-[620px_620px] lg:pl-[10px]">
+    <div class="mt-[47px] grid gap-x-5 gap-y-10 px-5 md:mt-10 md:grid-cols-2 md:gap-y-[60px] md:px-0 md:max-lg:grid-cols-[repeat(2,calc(47.27%+14px))] lg:grid-cols-[620px_620px] lg:pl-[10px]">
         {{ services }}
-            <div class="text-center lg:px-[10px]">
+            <div class="text-center md:max-lg:px-5 lg:px-[10px]">
                 <h3 class="font-serif text-[28px] leading-[34px] text-[#0f8bb8]">{{ title }}</h3>
                 <p class="mt-5 px-[10px] text-[18px] leading-[26px]">{{ text }}</p>
                 <a href="{{ url }}" class="mt-10 inline-block rounded-[3px] bg-secondary px-6 py-3 text-[18px] leading-[18px] uppercase text-white transition-colors hover:bg-accent">{{ button }}</a>

@@ -2,6 +2,8 @@
 id: 6ceb5a2b-1d3a-48c1-b677-c202f4614bfc
 blueprint: post
 title: 'Data Protection: Essential Questions for Board Directors'
+publish_date: '2025-05-30'
+published: true
 image: blog/data-protection-1.webp
 excerpt: 'Data is undoubtedly one of a company’s most valuable assets. In an era marked by relentless cyberattacks and security events, safeguarding this critical resource is paramount for the board and...'
 source_url: 'https://kkcpa.com/data-protection-essentia-questions-for-board-directors/'
