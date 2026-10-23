@@ -1,6 +1,6 @@
-<section class="mt-[100px] mb-[120px] md:mt-[150px] md:px-[30px]" style="--inset-phone: {{ inset_phone !== null ? inset_phone : 0 }}px">
-    {{ if heading }}<h2 class="px-5 font-serif text-[28px] leading-[51px] text-primary md:px-[10px] md:text-[42px] md:leading-[54px]">{{ heading }}</h2>{{ /if }}
-    {{ if text }}<div class="mt-[30px] px-5 text-[16px] leading-[22.4px] md:mt-10 md:px-[10px] md:leading-6 [&_a]:text-[#333]">{{ text }}</div>{{ /if }}
+<section class="mt-[100px] mb-[120px] md:mt-[150px] md:px-[30px]" style="--inset-phone: {{ inset_phone !== null ? inset_phone : 0 }}px; --h-phone: {{ heading_size_phone !== null ? heading_size_phone : 28 }}px; --pad-phone: {{ heading_inset_phone !== null ? heading_inset_phone : 20 }}px">
+    {{ if heading }}<h2 class="px-[var(--pad-phone)] font-serif text-[length:var(--h-phone)] leading-[51px] text-primary md:px-[10px] md:text-[42px] md:leading-[54px]">{{ heading }}</h2>{{ /if }}
+    {{ if text }}<div class="mt-[30px] px-[var(--pad-phone)] text-[16px] leading-[22.4px] md:mt-10 md:px-[10px] md:leading-6 [&_a]:text-[#333]">{{ text }}</div>{{ /if }}
     <div class="mt-10 grid px-[var(--inset-phone)] sm:grid-cols-2 md:px-0 lg:grid-cols-3" {{ if !no_load_more }}data-load-more="{{ per_page !== null ? per_page : 6 }}"{{ /if }}>
         {{ collection:case_studies }}
             {{ partial:case_study_card }}

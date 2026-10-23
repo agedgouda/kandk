@@ -1,5 +1,5 @@
 <section class="relative flex min-h-[250px] items-center overflow-hidden md:mt-[50px] md:h-[400px]" style="--indent: {{ indent !== null ? indent : 50 }}px; --indent-phone: {{ indent_phone !== null ? indent_phone : 20 }}px; --size-phone: {{ heading_size_phone !== null ? heading_size_phone : 42 }}px; --leading-phone: {{ heading_line_height_phone !== null ? heading_line_height_phone : 51 }}px">
     {{ partial:img :image="image" priority="true" class="absolute inset-0 size-full object-cover" }}
     <div class="absolute inset-0 bg-[linear-gradient(90deg,#15517d_0%,rgba(255,255,255,0.3)_100%)] opacity-75"></div>
-    <h1 class="relative max-w-[750px] py-[10px] pr-5 pl-[var(--indent-phone)] font-serif text-[length:var(--size-phone)] leading-[var(--leading-phone)] text-white md:pr-[10px] md:pl-[var(--indent)] md:text-[52px] md:leading-[72px] md:font-medium">{{ heading | nl2br }}</h1>
+    <h1 class="relative max-w-[750px] py-[10px] pr-[10px] pl-[var(--indent-phone)] font-serif text-[length:var(--size-phone)] leading-[var(--leading-phone)] text-white md:pr-[10px] md:pl-[var(--indent)] md:text-[52px] md:leading-[72px] md:font-medium">{{ heading | nl2br }}</h1>
 </section>

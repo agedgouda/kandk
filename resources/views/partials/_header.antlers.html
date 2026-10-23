@@ -8,7 +8,7 @@
             <ul class="flex items-center gap-[22px] text-[16px] leading-5 uppercase [word-spacing:1px]">
                 {{ nav:main }}
                     <li class="group relative">
-                        <a href="{{ url }}" class="block py-[5px] pr-[11px] tracking-normal text-primary transition-colors group-hover:text-secondary">{{ title }}</a>
+                        <a href="{{ url }}" class="block py-[5px] pr-[11px] tracking-normal {{ is_current ? 'text-[#5b849f]' : 'text-primary' }} transition-colors group-hover:text-secondary">{{ title }}</a>
                         {{ if children }}
                             <ul class="invisible absolute top-full left-0 mt-[15px] bg-[#f3f5f8] opacity-0 transition-opacity duration-200 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100 before:absolute before:inset-x-0 before:-top-[15px] before:h-[15px]">
                                 {{ children }}

@@ -22,13 +22,13 @@
 
 {{# Intro + Recent updates #}}
 <section class="mt-20 flex flex-col px-[10px] py-[10px] lg:flex-row">
-    <div class="pb-[70px] md:px-5 lg:w-[62.4%] lg:pt-0 lg:pr-[60px] lg:pb-0 lg:pl-10">
+    <div class="pr-[33px] pb-[70px] md:px-5 lg:w-[62.4%] lg:pt-0 lg:pr-[60px] lg:pb-0 lg:pl-10">
         <h2 class="text-center font-serif text-[30px] leading-[48px] text-primary md:text-left md:text-[42px] md:leading-[54px]">{{ intro }}</h2>
     </div>
     <div class="self-start bg-mist p-[10px] lg:w-[37.6%]">
         <h2 class="mb-5 font-serif text-[28px] leading-[34px] text-primary">{{ updates_title }}</h2>
         <div data-accordion>
-            {{ collection:posts limit="9" }}
+            {{ collection:posts limit="9" sort="date:desc|title:desc" }}
                 <div class="group" data-accordion-item {{ first ? 'data-open' : '' }}>
                     <button type="button" class="flex min-h-[50px] w-full items-stretch bg-secondary text-left text-white group-data-open:bg-primary">
                         <span class="flex w-[50px] shrink-0 items-center justify-center bg-primary group-data-open:bg-secondary">
@@ -97,7 +97,7 @@
 </a>
 
 {{# Case studies #}}
-{{ partial src="blocks/case_studies" :heading="case_studies_title" :text="case_studies_text" no_load_more="true" }}
+{{ partial src="blocks/case_studies" :heading="case_studies_title" :text="case_studies_text" no_load_more="true" heading_size_phone="42" heading_inset_phone="10" }}
 
 {{# Testimonial #}}
 {{ testimonial }}
@@ -105,4 +105,4 @@
 {{ /testimonial }}
 
 {{# Careers: same section as the page builder's careers banner, with the home page's phone settings #}}
-{{ partial src="blocks/careers_banner" :image="careers_image" :title="careers_title" :subtitle="careers_subtitle" :text="careers_text" :button_text="careers_button" :button_url="careers_url" heading_size_phone="42" heading_line_height_phone="52" top_phone="44" inset_phone="10" hide_subtitle_phone="true" site_font_phone="true" text_line_height_phone="22.4" }}
+{{ partial src="blocks/careers_banner" :image="careers_image" :title="careers_title" :title_phone="careers_title_phone" :subtitle="careers_subtitle" :text="careers_text" :button_text="careers_button" :button_url="careers_url" heading_size_phone="42" heading_line_height_phone="52" top_phone="44" inset_phone="10" hide_subtitle_phone="true" site_font_phone="true" text_line_height_phone="22.4" }}

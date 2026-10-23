@@ -237,6 +237,8 @@ tabs:
                         - { handle: button_text, field: { type: text, display: 'Button Text', width: 50 } }
                         - { handle: button_url, field: { type: text, display: 'Button Link', width: 50 } }
                         - { handle: image, field: { type: assets, display: 'Background Image', container: assets, folder: pages, max_files: 1 } }
+                        - { handle: space_above, field: { type: integer, display: 'Space Above (px)', instructions: 'Default 0.', width: 25 } }
+                        - { handle: space_above_phone, field: { type: integer, display: 'Space Above on Phones (px)', instructions: 'Default 0.', width: 25 } }
                         - { handle: hide_on_phone, field: { type: toggle, display: 'Hide on Phones', width: 25 } }
                     careers_banner:
                       display: 'Careers Banner'
@@ -244,6 +246,7 @@ tabs:
                       fields:
                         - { handle: image, field: { type: assets, display: 'Background Image', container: assets, folder: pages, max_files: 1 } }
                         - { handle: title, field: { type: textarea, display: Heading, instructions: 'Press Enter for a line break on phones.' } }
+                        - { handle: title_phone, field: { type: textarea, display: 'Different Heading on Phones (optional)' } }
                         - { handle: subtitle, field: { type: text, display: Subheading } }
                         - { handle: text, field: { type: textarea, display: Text } }
                         - { handle: button_text, field: { type: text, display: 'Button Text', width: 50 } }

@@ -1,4 +1,4 @@
-<a href="{{ button_url }}" class="group relative flex min-h-[450px] items-center justify-center overflow-hidden px-[35px] py-[60px] text-center text-white">
+<a href="{{ button_url }}" style="--above: {{ space_above !== null ? space_above : 0 }}px; --above-phone: {{ space_above_phone !== null ? space_above_phone : 0 }}px" class="group relative mt-[var(--above-phone)] flex min-h-[450px] md:mt-[var(--above)] items-center justify-center overflow-hidden px-[35px] py-[60px] text-center text-white">
     {{ partial:img :image="image" class="absolute inset-0 size-full object-cover transition-transform duration-[1500ms] group-hover:scale-110" }}
     <span class="absolute inset-0 bg-primary/40"></span>
     <span class="relative block">

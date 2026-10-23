@@ -1,6 +1,6 @@
 <section class="flex flex-col md:flex-row" style="--h-phone: {{ heading_size_phone !== null ? heading_size_phone : 28 }}px; --t-phone: {{ text_size_phone !== null ? text_size_phone : 18 }}px; --t-phone-lh: {{ (text_size_phone ?? 18) == 16 ? '1.4' : '1.5' }}">
     <div class="bg-mist p-[10px] md:w-[64.17%]">
-        <div class="px-[10px] pt-[10px] pb-[13px] md:pt-5 md:pr-0 md:pb-[70px] md:pl-10">
+        <div class="pt-[10px] pr-0 pb-[13px] pl-[10px] md:pt-5 md:pb-[70px] md:pl-10">
             <h2 class="font-serif text-[length:var(--h-phone)] leading-[51px] text-primary md:text-[42px] md:leading-[54px]">{{ heading }}</h2>
             <div class="mt-5 text-[length:var(--t-phone)] tracking-normal leading-[var(--t-phone-lh)] text-primary md:mt-[60px] md:text-[22px] md:leading-[33px] [&_p+p]:mt-5">{{ text }}</div>
         </div>

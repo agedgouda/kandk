@@ -34,6 +34,9 @@ case_studies_title: 'Client Success Stories'
 case_studies_text: 'Explore how Kaufman & Kabani has partnered with businesses like yours to overcome challenges, optimize operations, and achieve significant financial growth. Our [**case studies**](/case-studies) highlight the practical solutions and measurable results we deliver.'
 testimonial:
   - a4c6a31d-f171-474b-85d9-1fda0699ddc1
+careers_title_phone: |-
+  Join Our Team: Your Growth,
+  Our Priority
 careers_title: 'Career Opportunities: Build Your Future with Us'
 careers_subtitle: 'Excellence in Building Client Success — And Yours.'
 careers_text: 'At Kaufman & Kabani, we’re dedicated to “Excellence in building client success,” a mission that extends to our team. If you’re a self-starter with at least three years of public accounting experience and talent in accounting, business consulting, or tax planning, we invite you to join our diverse client-focused practice.'

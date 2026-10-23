@@ -4,7 +4,7 @@
     <div class="absolute inset-0 bg-[linear-gradient(264deg,#15517d_31%,rgba(21,81,125,0.15)_79%)] opacity-[0.76]"></div>
     <div class="relative w-full pl-[var(--inset-phone)] pr-[10px] text-right text-white md:w-auto md:max-w-none md:py-[10px] md:pr-0 md:pl-[var(--indent)] md:text-left">
         <div class="md:w-[741px]">
-            <h2 class="font-serif text-[length:var(--h-phone)] leading-[var(--h-lh-phone)] md:text-[42px] md:leading-[var(--h-lh)]">{{ title | replace("\n", ' <br class="md:hidden">') }}</h2>
+            <h2 class="font-serif text-[length:var(--h-phone)] leading-[var(--h-lh-phone)] md:text-[42px] md:leading-[var(--h-lh)]">{{ if title_phone }}<span class="md:hidden">{{ title_phone | nl2br }}</span><span class="max-md:hidden">{{ title }}</span>{{ else }}{{ title | replace("\n", ' <br class="md:hidden">') }}{{ /if }}</h2>
             <h3 class="mt-5 text-[18px] leading-[26px] md:text-[length:var(--sub)] md:leading-[var(--sub-lh)] {{ hide_subtitle_phone ? 'max-md:hidden' : '' }}">{{ subtitle }}</h3>
             <p class="mt-5 {{ site_font_phone ? 'font-sans' : 'font-system' }} text-[16px] leading-[var(--t-lh-phone)] tracking-normal md:font-system md:leading-6">{{ text }}</p>
             <div class="mt-10 text-right">

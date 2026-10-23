@@ -10,7 +10,7 @@
     {{ /if }}
     {{ if type == 'textarea' }}
         <textarea id="{{ id }}" name="{{ name }}" {{ if counter }}maxlength="{{ counter }}" data-counter{{ /if }} class="block h-[192px] w-full bg-[var(--field)] p-3 font-system text-[14px] leading-[21px] tracking-normal text-[#112337] focus:outline-2 focus:outline-secondary">{{ old }}</textarea>
-        {{ if counter }}<div class="mt-2 font-system text-[13px] leading-[18.59px] tracking-normal text-[#585e6a]"><span data-counter-count>0</span> of {{ counter }} max characters</div>{{ /if }}
+        {{ if counter }}<div class="mt-2 hidden font-system md:block text-[13px] leading-[18.59px] tracking-normal text-[#585e6a]"><span data-counter-count>0</span> of {{ counter }} max characters</div>{{ /if }}
     {{ elseif type == 'files' }}
         <input id="{{ id }}" type="file" name="{{ name }}" accept=".pdf,.doc,.docx" class="block h-[38px] w-full rounded-[3px] border border-[#686e77] bg-white pr-3 text-[16px] leading-[22.4px] text-[#112337] file:mr-3 file:h-full file:border-0 file:bg-primary file:px-3 file:text-[#112337] md:leading-6">
         <p class="tracking-body mt-2 text-[12px] leading-5 text-[#585e6a]">Max. file size: 64 MB.</p>

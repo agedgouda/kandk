@@ -81,6 +81,8 @@ blocks:
     button_text: 'Contact Us'
     button_url: /contact-us
     image: pages/CTA-1024x480.webp
+    space_above: 189
+    space_above_phone: 29
   -
     id: 25dd5a42
     type: testimonial
@@ -89,4 +91,5 @@ blocks:
       - 5d69a8f7-bb25-4134-a7a0-5b926035f62a
     quote_size: small
     inset: 0
+    space_above: 0
 ---

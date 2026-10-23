@@ -1,13 +1,13 @@
-<article class="px-5 pt-[49px] lg:pr-[170px] lg:pl-[120px]">
-    <h1 class="mx-auto max-w-[650px] text-center font-serif text-[36px] leading-[46px] font-medium text-primary md:text-[52px] md:leading-[62px] lg:translate-x-[25px]">{{ title }}</h1>
-    {{ partial:img :image="image" widths="480,800,1150" sizes="(min-width: 1150px) 1150px, 100vw" priority="true" class="mt-[70px] aspect-[3/2] h-auto w-full max-w-[1150px] object-cover" }}
-    <div class="prose-kk mt-[50px] max-w-[1150px] [&_p]:mb-5 [&_strong]:text-body">{{ content }}</div>
+<article class="px-[25px] lg:pt-[49px] lg:pr-[170px] lg:pl-[120px]">
+    <h1 class="mx-auto max-w-[650px] text-center font-serif text-[52px] leading-[62px] font-medium text-primary lg:translate-x-[25px]">{{ title }}</h1>
+    {{ partial:img :image="image" widths="480,800,1150" sizes="(min-width: 1150px) 1150px, 100vw" priority="true" class="mt-[130px] aspect-[3/2] h-auto w-full max-w-[1150px] object-cover md:mt-[70px]" }}
+    <div class="prose-kk mt-[50px] max-w-[1150px] max-md:leading-[22.4px] [&_p]:mb-5 [&_strong]:text-body">{{ content }}</div>
 </article>
 
 {{# Same four cards on every case study, newest first, stacked into the shortest column like the live site #}}
-<section class="mt-10 px-5 lg:px-[120px]">
-    <h2 class="px-[10px] font-merriweather text-[18px] leading-[54px] font-light text-primary">More Case Studies</h2>
-    <div class="grid items-start md:grid-cols-2 lg:grid-cols-3" data-masonry>
+<section class="mt-10 px-[15px] lg:px-[120px]">
+    <h2 class="px-5 font-merriweather text-[18px] leading-[51px] font-light text-primary md:px-[10px] md:leading-[54px]">More Case Studies</h2>
+    <div class="grid items-start px-[10px] md:grid-cols-2 md:px-0 lg:grid-cols-3" data-masonry>
         {{ collection:case_studies limit="4" }}
             <article class="p-[10px]">
                 <div class="border border-black/10 bg-white">
@@ -26,8 +26,8 @@
     </div>
 
     {{# The live site's "Previous" is the older case study, which comes later in our newest-first list #}}
-    <nav class="mt-20 mb-[100px] flex justify-between gap-6 px-[10px] lg:px-0" aria-label="Case study navigation">
-        <div class="min-w-0 lg:w-[600px]">
+    <nav class="mt-20 mb-[100px] flex justify-between px-[10px] lg:px-0" aria-label="Case study navigation">
+        <div class="min-w-0 basis-1/2 lg:w-[600px] lg:basis-auto">
             {{ collection:next in="case_studies" limit="1" sort="order:asc" }}{{ if id != page:id }}
                 <a href="{{ url }}" class="block">
                     <span class="block font-montserrat text-[16px] leading-6 tracking-normal text-primary">Previous</span>
@@ -35,7 +35,7 @@
                 </a>
             {{ /if }}{{ /collection:next }}
         </div>
-        <div class="min-w-0 text-right lg:w-[436px]">
+        <div class="min-w-0 basis-1/2 text-right lg:w-[436px] lg:basis-auto">
             {{ collection:previous in="case_studies" limit="1" sort="order:asc" }}{{ if id != page:id }}
                 <a href="{{ url }}" class="block">
                     <span class="block font-montserrat text-[16px] leading-6 tracking-normal text-primary">Next</span>

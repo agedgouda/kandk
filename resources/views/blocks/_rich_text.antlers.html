@@ -5,8 +5,8 @@
     </section>
 {{ else }}
     <section class="{{ background == 'gray' ? 'bg-mist' : '' }} px-[10px] pt-[50px] pb-[10px] md:pt-10 md:pr-[10px] md:pb-[30px] md:pl-10">
-        {{ if lead }}<h2 class="pr-[10px] text-[16px] leading-[22.4px] text-primary md:text-[22px] md:leading-[28px]">{{ lead }}</h2>{{ /if }}
-        {{ if heading }}<h2 class="mt-[14px] font-serif text-[28px] leading-[51px] text-primary md:mt-20 md:leading-[34px]">{{ heading }}</h2>{{ /if }}
+        {{ if lead }}<h2 class="pr-[10px] pl-[10px] text-[16px] leading-[22.4px] text-primary md:pl-0 md:text-[22px] md:leading-[28px]">{{ lead }}</h2>{{ /if }}
+        {{ if heading }}<h2 class="mt-[14px] pl-[10px] font-serif md:pl-0 text-[28px] leading-[51px] text-primary md:mt-20 md:leading-[34px]">{{ heading }}</h2>{{ /if }}
         <div class="mt-[30px] flex flex-col md:flex-row md:items-start md:gap-5">
             <div class="prose-kk grow px-[10px] md:pr-0 [&_p]:mb-5 max-md:[&_p]:leading-[22.4px]">{{ content }}</div>
             {{ partial:img :image="image" widths="200,400,600" sizes="(min-width: 768px) 272px, 191px" class="mt-[19px] ml-[51px] h-auto w-[191px] shrink-0 md:mt-0 md:ml-0 md:w-[272px]" }}

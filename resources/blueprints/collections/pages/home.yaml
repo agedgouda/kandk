@@ -240,6 +240,11 @@ tabs:
               type: text
               display: Heading
           -
+            handle: careers_title_phone
+            field:
+              type: textarea
+              display: 'Different Heading on Phones (optional)'
+          -
             handle: careers_subtitle
             field:
               type: text

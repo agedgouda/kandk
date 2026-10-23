@@ -14,11 +14,11 @@
         {{# The live site shows a spam check here; the demo keeps the same space #}}
         <div class="mt-10 md:col-span-2">
             <span class="block text-[16px] leading-[22.4px] md:leading-6">CAPTCHA</span>
-            <div class="mt-2 flex h-[78px] w-[304px] items-center justify-center border border-[#d3d3d3] bg-[#f9f9f9] px-3 text-center font-system text-[12px] leading-4 tracking-normal text-[#585e6a]">
+            <div class="mt-2 hidden h-[78px] w-[304px] md:flex items-center justify-center border border-[#d3d3d3] bg-[#f9f9f9] px-3 text-center font-system text-[12px] leading-4 tracking-normal text-[#585e6a]">
                 {{ if config:app.static_demo }}Demo site: the spam check and sending are turned off.{{ else }}Spam check{{ /if }}
             </div>
         </div>
-        <div class="mt-6 text-center md:col-span-2">
+        <div class="mt-[10px] text-center md:col-span-2 md:mt-6">
             <button type="submit" {{ if config:app.static_demo }}disabled{{ /if }} class="h-[38px] w-[100px] border border-transparent bg-primary px-4 text-white {{ theme == 'careers' ? 'font-system text-[14px] leading-[14px] font-medium tracking-normal' : 'rounded-[3px] text-[16px] leading-4' }} disabled:cursor-not-allowed">Submit</button>
         </div>
     {{ /if }}

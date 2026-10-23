@@ -34,10 +34,10 @@
             <div class="flex flex-col gap-5 p-[10px] sm:flex-row sm:items-start lg:items-center lg:gap-5">
                 <h2 class="w-[99px] shrink-0 font-serif text-[28px] leading-[34px] text-white">{{ settings:quick_links_title }}</h2>
                 <ul class="p-[10px] text-[16px] leading-6 text-white sm:w-[272px]">
-                    {{ nav:footer_left }}<li><a href="{{ url }}" class="block px-5 py-[13px] hover:text-secondary">{{ title }}</a></li>{{ /nav:footer_left }}
+                    {{ nav:footer_left }}<li><a href="{{ url }}" class="block px-5 py-[13px] hover:text-secondary {{ is_current ? 'text-[#5b849f]' : '' }}">{{ title }}</a></li>{{ /nav:footer_left }}
                 </ul>
                 <ul class="p-[10px] text-[16px] leading-6 text-white sm:w-[272px]">
-                    {{ nav:footer_right }}<li><a href="{{ url }}" class="block px-5 py-[13px] hover:text-secondary">{{ title }}</a></li>{{ /nav:footer_right }}
+                    {{ nav:footer_right }}<li><a href="{{ url }}" class="block px-5 py-[13px] hover:text-secondary {{ is_current ? 'text-[#5b849f]' : '' }}">{{ title }}</a></li>{{ /nav:footer_right }}
                 </ul>
             </div>
         </div>

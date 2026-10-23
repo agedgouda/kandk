@@ -1,5 +1,5 @@
 <section class="{{ background == 'gray' ? 'bg-mist pt-5 pb-[10px] md:pt-[10px]' : 'mt-5' }} px-[10px] md:px-10" style="--col1: {{ first_column_width !== null ? first_column_width : 680 }}px">
-    {{ if heading }}<h3 class="px-[10px] text-[22px] leading-[34px] text-primary md:leading-[54px]">{{ heading }}</h3>{{ /if }}
+    {{ if heading }}<h3 class="px-5 text-[22px] leading-[51px] text-primary md:px-[10px] md:leading-[54px] {{ text ? '' : 'mb-[28px]' }}">{{ heading }}</h3>{{ /if }}
     {{ if text }}<div class="mb-5 px-[10px] text-[16px] leading-6">{{ text }}</div>{{ /if }}
     {{# Two columns: first half on the left, like the live site #}}
     {{ half = items | count | divide(2) | floor }}
