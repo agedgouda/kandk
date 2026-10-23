@@ -1,13 +1,21 @@
-{{# One form field, styled like the live site #}}
-<div class="{{ width == 50 ? 'sm:col-span-1' : 'sm:col-span-2' }}">
-    <label for="{{ handle }}" class="mb-1 block text-[14px] leading-[21px] text-primary">{{ display }}{{ if validate | contains('required') }} <span class="text-[#c02b0a]">(Required)</span>{{ /if }}</label>
-    {{ if type == 'textarea' }}
-        <textarea id="{{ handle }}" name="{{ handle }}" rows="6" class="w-full border border-[#bbcfdb] bg-white px-3 py-2 text-[16px] focus:border-secondary focus:outline-none">{{ old }}</textarea>
-    {{ elseif type == 'files' }}
-        <input id="{{ handle }}" type="file" name="{{ handle }}" accept=".pdf,.doc,.docx" class="w-full text-[14px] file:mr-4 file:border-0 file:bg-secondary file:px-4 file:py-2 file:text-white">
-        <p class="mt-1 text-[13px] text-[#7a7a7a]">Max. file size: 64 MB.</p>
+{{# One form field. Paired fields sit side by side on computers; "group" adds a label over the pair #}}
+{{ if group }}
+    <div class="mt-10 text-[16px] leading-[22.4px] first-of-type:mt-0 md:col-span-2 md:leading-6">{{ group }} <span class="text-[12px] leading-[17.16px] font-medium text-[#c02b0a]">(Required)</span></div>
+{{ /if }}
+<div class="{{ sublabel ? (column == 'right' ? 'mt-3' : 'mt-2') : 'mt-10' }} {{ width == 50 ? (column == 'left' ? (sublabel ? 'md:pr-[6px]' : 'md:pr-2') : (sublabel ? 'md:mt-2 md:pl-[6px]' : 'md:mt-10 md:pl-2')) : 'md:col-span-2' }}">
+    {{ if sublabel }}
+        <label for="{{ id }}" class="mb-[7px] block font-system text-[13px] leading-[18.59px] tracking-normal text-[#585e6a]">{{ display }}</label>
     {{ else }}
-        <input id="{{ handle }}" type="{{ input_type ?? 'text' }}" name="{{ handle }}" value="{{ old }}" class="w-full border border-[#bbcfdb] bg-white px-3 py-2 text-[16px] focus:border-secondary focus:outline-none">
+        <label for="{{ id }}" class="mb-2 block text-[16px] leading-[22.4px] md:leading-6">{{ display }}{{ if validate | contains('required') }} <span class="text-[12px] leading-[17.16px] font-medium text-[#c02b0a]">(Required)</span>{{ /if }}</label>
+    {{ /if }}
+    {{ if type == 'textarea' }}
+        <textarea id="{{ id }}" name="{{ name }}" {{ if counter }}maxlength="{{ counter }}" data-counter{{ /if }} class="block h-[192px] w-full bg-[var(--field)] p-3 font-system text-[14px] leading-[21px] tracking-normal text-[#112337] focus:outline-2 focus:outline-secondary">{{ old }}</textarea>
+        {{ if counter }}<div class="mt-2 font-system text-[13px] leading-[18.59px] tracking-normal text-[#585e6a]"><span data-counter-count>0</span> of {{ counter }} max characters</div>{{ /if }}
+    {{ elseif type == 'files' }}
+        <input id="{{ id }}" type="file" name="{{ name }}" accept=".pdf,.doc,.docx" class="block h-[38px] w-full rounded-[3px] border border-[#686e77] bg-white pr-3 text-[16px] leading-[22.4px] text-[#112337] file:mr-3 file:h-full file:border-0 file:bg-primary file:px-3 file:text-[#112337] md:leading-6">
+        <p class="tracking-body mt-2 text-[12px] leading-5 text-[#585e6a]">Max. file size: 64 MB.</p>
+    {{ else }}
+        <input id="{{ id }}" type="{{ input_type ?? 'text' }}" name="{{ name }}" value="{{ old }}" class="block h-[38px] {{ size == 'small' ? 'w-[76px] md:w-[224px]' : 'w-full' }} bg-[var(--field)] px-3 font-system text-[14px] tracking-normal text-[#112337] focus:outline-2 focus:outline-secondary">
     {{ /if }}
     {{ if error }}<p class="mt-1 text-[13px] text-[#c02b0a]">{{ error }}</p>{{ /if }}
 </div>

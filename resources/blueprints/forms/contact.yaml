@@ -1,10 +1,11 @@
 title: 'Contact Us'
+# group: label shown above a pair of fields; sublabel: small label above the input; size: small makes the input narrow; counter: max characters shown under a textarea
 fields:
-  - { handle: first_name, field: { type: text, display: First, validate: [required], width: 50 } }
-  - { handle: last_name, field: { type: text, display: Last, validate: [required], width: 50 } }
-  - { handle: company, field: { type: text, display: Company, validate: [required] } }
-  - { handle: job_title, field: { type: text, display: Title, validate: [required] } }
-  - { handle: email, field: { type: text, input_type: email, display: Email, validate: [required, email] } }
-  - { handle: phone, field: { type: text, input_type: tel, display: Phone, validate: [required] } }
-  - { handle: subject, field: { type: text, display: Subject, validate: [required] } }
-  - { handle: message, field: { type: textarea, display: 'Your Message', validate: [required] } }
+  - { handle: first_name, field: { type: text, display: First, validate: [required], width: 50, column: left, group: Name, sublabel: true } }
+  - { handle: last_name, field: { type: text, display: Last, validate: [required], width: 50, column: right, sublabel: true } }
+  - { handle: company, field: { type: text, display: Company, validate: [required], width: 50, column: left } }
+  - { handle: job_title, field: { type: text, display: Title, validate: [required], width: 50, column: right } }
+  - { handle: email, field: { type: text, input_type: email, display: Email, validate: [required, email], width: 50, column: left } }
+  - { handle: phone, field: { type: text, input_type: tel, display: Phone, validate: [required], width: 50, column: right } }
+  - { handle: subject, field: { type: text, display: Subject, validate: [required], size: small } }
+  - { handle: message, field: { type: textarea, display: 'Your Message', validate: [required, 'max:600'], counter: 600 } }

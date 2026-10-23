@@ -1,10 +1,14 @@
-<section class="bg-mist px-5 py-[100px] md:px-10 md:pt-[130px] md:pb-[130px]">
-    <div class="px-[10px] {{ heading_align == 'center' ? 'text-center' : '' }}">
-        <h2 class="font-serif text-[32px] leading-[1.25] text-primary md:text-[42px] md:leading-[54px]">{{ heading }}</h2>
+{{# Phone sizes vary by page on the live site, so they are fields with sensible defaults #}}
+<section class="bg-mist px-[10px] pt-[30px] {{ subheading ? 'pb-[10px] md:pb-[30px]' : 'pb-[23px] md:pb-[130px]' }} md:px-0 md:pt-[130px] {{ phone_align == 'center' ? 'max-md:text-center' : '' }}" style="--h-phone: {{ heading_size_phone !== null ? heading_size_phone : 28 }}px; --t-phone: {{ text_size_phone !== null ? text_size_phone : 18 }}px; --t-phone-lh: {{ (text_size_phone ?? 18) == 16 ? '1.4' : '1.5' }}; --t: {{ text_size !== null ? text_size : 22 }}px; --indent: {{ indent !== null ? indent : 50 }}px; --btn: {{ button_inset !== null ? button_inset : 50 }}px; --btn-phone: {{ button_inset_phone !== null ? button_inset_phone : 20 }}px">
+    <div class="px-[10px] md:pr-[50px] md:pl-[var(--indent)] {{ heading_align == 'center' ? 'text-center' : '' }}">
+        <h2 class="font-serif text-[length:var(--h-phone)] leading-[51px] text-primary md:text-[42px] md:leading-[54px]">{{ heading }}</h2>
     </div>
-    <div class="mt-[60px] px-[10px] text-[20px] leading-[30px] text-primary md:text-[22px] md:leading-[33px] [&_p+p]:mt-5">{{ text }}</div>
+    <div class="mt-5 px-[10px] text-[length:var(--t-phone)] tracking-normal leading-[var(--t-phone-lh)] text-primary md:mt-[60px] md:pr-[50px] md:pl-[var(--indent)] md:text-[length:var(--t)] md:leading-[1.5] [&_p+p]:mt-5">{{ text }}</div>
+    {{ if subheading }}
+        <h2 class="mt-[31px] px-[10px] font-serif text-[26px] leading-[51px] text-primary md:mt-[88px] md:pr-[50px] md:pl-[var(--indent)] md:text-[32px] md:leading-[46px]">{{ subheading }}</h2>
+    {{ /if }}
     {{ if button_text }}
-        <div class="mt-20 px-[10px] text-right">
+        <div class="mt-[37px] pr-[calc(var(--btn-phone)-10px)] text-right md:mt-20 md:pr-[var(--btn)]">
             <a href="{{ button_url }}" class="inline-block rounded-[3px] bg-secondary px-6 py-3 text-[18px] leading-[18px] uppercase text-white transition-colors hover:bg-accent">{{ button_text }}</a>
         </div>
     {{ /if }}

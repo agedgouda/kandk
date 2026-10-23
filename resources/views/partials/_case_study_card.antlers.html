@@ -2,9 +2,9 @@
     <div class="h-full bg-white">
         <a href="{{ url }}" class="block" tabindex="-1" aria-hidden="true">{{ partial:img :image="image" widths="400,800" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" class="aspect-[3/2] w-full object-cover" }}</a>
         <div class="p-[15px]">
-            <h3 class="mt-[10px] font-serif text-[24px] leading-[54px]"><a href="{{ url }}" class="text-primary hover:text-secondary">{{ title }}</a></h3>
-            <p class="text-[14px] leading-[21px]">{{ excerpt }}</p>
-            <a href="{{ url }}" class="block pt-5 text-[16px] leading-6 uppercase text-secondary hover:text-primary">Read More<span class="sr-only">: {{ title }}</span></a>
+            <h3 class="mt-[10px] mb-[5px] font-serif text-[26px] leading-[51px] md:text-[24px] md:leading-[54px]"><a href="{{ url }}" class="text-primary hover:text-secondary">{{ title }}</a></h3>
+            <p class="font-system text-[14px] leading-[21px] tracking-normal">{{ excerpt }}</p>
+            <a href="{{ url }}" class="block pt-5 text-[16px] leading-6 uppercase text-[#0f8bb8] hover:text-primary">Read More<span class="sr-only">: {{ title }}</span></a>
         </div>
     </div>
 </article>

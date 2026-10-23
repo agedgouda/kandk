@@ -18,6 +18,8 @@ blocks:
     text: 'Every industry comes with its own unique standards, practices, and demands. At Kaufman & Kabani, we understand that this uniqueness requires a specialized focus from your CPA firm. By delving deep into the distinct character of your industry, we’re exceptionally well-equipped to serve you.'
     button_text: 'Our Services'
     button_url: /accounting-auditing
+    heading_size_phone: 42
+    text_size_phone: 22
   -
     id: 96cf0ba9
     type: image_text
@@ -69,6 +71,7 @@ blocks:
     enabled: true
     testimonial:
       - e25c8d6b-e2c8-4dda-b50b-9711afbbfbe4
+    name_style_phone: plain
   -
     id: 0e0ebc5b
     type: careers_banner
@@ -79,4 +82,6 @@ blocks:
     text: 'At Kaufman & Kabani, we’re dedicated to “Excellence in building client success,” a mission that extends to our team. If you’re a self-starter with at least three years of public accounting experience and talent in accounting, business consulting, or tax planning, we invite you to join our diverse client-focused practice.'
     button_text: 'Job Openings'
     button_url: /careers
+    heading_line_height: 54
+    subtitle_size: 22
 ---

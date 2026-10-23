@@ -11,6 +11,7 @@ blocks:
     heading: |-
       Specialized Solutions
       for Your Success
+    indent_phone: 50
   -
     id: f7e8c852
     type: service_intro
@@ -24,6 +25,7 @@ blocks:
     heading: 'Our Strategic Planning & Consulting Services'
     heading_style: small
     text: 'We prioritize building strong, collaborative relationships with our clients, maintaining open communication to gain an in-depth understanding of your business complexities, culture, and goals. This enables us to deliver actionable insights and strategies that enhance financial performance and operational efficiency. Our services include in-depth financial analysis, profit margin optimization, overhead and inventory management, operating expense reduction, pricing and product costing strategies, and support in achieving your profitability objectives.'
+    indent: 40
   -
     id: e969f7e3
     type: feature_list
@@ -82,6 +84,7 @@ blocks:
         id: 89a8de8b
         label: 'Monitoring of Action Plans:'
         text: 'Tracking progress and ensuring accountability to achieve your strategic goals.'
+    first_column_width: 700
   -
     id: 7f2e7b1e
     type: note_band
@@ -97,4 +100,6 @@ blocks:
     text: 'At Kaufman & Kabani, we’re dedicated to “Excellence in building client success,” a mission that extends to our team. If you’re a self-starter with at least three years of public accounting experience and talent in accounting, business consulting, or tax planning, we invite you to join our diverse client-focused practice.'
     button_text: 'Job Openings'
     button_url: /careers
+    heading_size_phone: 42
+    heading_line_height_phone: 52
 ---

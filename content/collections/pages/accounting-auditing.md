@@ -11,6 +11,7 @@ blocks:
     heading: |-
       Specialized Solutions
       for Your Success
+    heading_size_phone: 38
   -
     id: d15f0e4d
     type: service_intro
@@ -84,9 +85,18 @@ blocks:
     type: careers_banner
     enabled: true
     image: pages/career-4.webp
-    title: 'Join Our Team: Your Growth, Our Priority'
+    title: |-
+      Join Our Team: Your Growth,
+      Our Priority
     subtitle: 'Where Talent Thrives and Client Success is Our Shared Goal.'
     text: 'At Kaufman & Kabani, we’re dedicated to “Excellence in building client success,” a mission that extends to our team. If you’re a self-starter with at least three years of public accounting experience and talent in accounting, business consulting, or tax planning, we invite you to join our diverse client-focused practice.'
     button_text: 'Job Openings'
     button_url: /careers
+    subtitle_size: 26
+    subtitle_line_height: 32
+    heading_size_phone: 42
+    heading_line_height_phone: 52
+    top_phone: 44
+    inset_phone: 0
+    hide_subtitle_phone: true
 ---

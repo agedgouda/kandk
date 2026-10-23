@@ -1,6 +1,15 @@
-<section class="px-5 py-[60px] md:px-[50px]">
-    <div class="flex flex-col gap-10 lg:flex-row lg:items-start">
-        <div class="prose-kk grow">{{ content }}</div>
-        {{ partial:img :image="image" widths="400,800" sizes="400px" class="h-auto w-full max-w-[400px] shrink-0 self-center" }}
-    </div>
-</section>
+{{ if style == 'document' }}
+    {{# Long-form text such as the privacy policy #}}
+    <section class="{{ background == 'gray' ? 'bg-mist' : '' }} px-5 pt-10 pb-[30px] md:px-[50px] md:pt-[130px] md:pb-[150px]">
+        <div class="tracking-body text-[16px] leading-[22.4px] md:leading-6 [&_a]:text-[#0f8bb8] [&_h2]:mt-20 [&_h2]:mb-5 [&_h2]:font-serif [&_h2]:text-[42px] [&_h2]:leading-[51px] [&_h2]:text-primary [&_h2:first-child]:mt-0 [&_h2:first-child]:mb-[60px] md:[&_h2]:leading-[54px] [&_li]:list-disc [&_p]:mb-5 [&_strong]:font-bold [&_ul]:pl-10">{{ content }}</div>
+    </section>
+{{ else }}
+    <section class="{{ background == 'gray' ? 'bg-mist' : '' }} px-[10px] pt-[50px] pb-[10px] md:pt-10 md:pr-[10px] md:pb-[30px] md:pl-10">
+        {{ if lead }}<h2 class="pr-[10px] text-[16px] leading-[22.4px] text-primary md:text-[22px] md:leading-[28px]">{{ lead }}</h2>{{ /if }}
+        {{ if heading }}<h2 class="mt-[14px] font-serif text-[28px] leading-[51px] text-primary md:mt-20 md:leading-[34px]">{{ heading }}</h2>{{ /if }}
+        <div class="mt-[30px] flex flex-col md:flex-row md:items-start md:gap-5">
+            <div class="prose-kk grow px-[10px] md:pr-0 [&_p]:mb-5 max-md:[&_p]:leading-[22.4px]">{{ content }}</div>
+            {{ partial:img :image="image" widths="200,400,600" sizes="(min-width: 768px) 272px, 191px" class="mt-[19px] ml-[51px] h-auto w-[191px] shrink-0 md:mt-0 md:ml-0 md:w-[272px]" }}
+        </div>
+    </section>
+{{ /if }}

@@ -1,7 +1,9 @@
-<section class="px-5 py-[80px] md:px-[50px]">
-    <h2 class="font-serif text-[32px] leading-[1.25] text-primary md:text-[42px] md:leading-[54px]">{{ heading }}</h2>
-    {{ if text }}<p class="mt-5 text-[16px] leading-6">{{ text }}</p>{{ /if }}
-    <div class="mt-10 max-w-[800px]">
-        {{ partial:form form="careers" files="true" }}
+<section class="bg-mist py-[10px] pl-[10px] md:px-0 md:py-20">
+    <div class="px-[10px] pt-[10px] pb-5 md:ml-[calc(50%-562px)] md:max-w-[1104px] md:p-[10px]">
+        <h2 class="font-serif text-[28px] leading-[51px] text-primary md:text-[42px] md:leading-[54px]">{{ heading }}</h2>
+        {{ if text }}<p class="mt-5 text-[16px] leading-[22.4px] md:leading-6">{{ text }}</p>{{ /if }}
+        <div class="mt-[59px] md:mt-[60px]">
+            {{ partial:form form="careers" theme="careers" files="true" }}
+        </div>
     </div>
 </section>

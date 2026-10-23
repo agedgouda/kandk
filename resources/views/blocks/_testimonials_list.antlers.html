@@ -1,16 +1,9 @@
-<section class="mx-auto max-w-[1200px] px-5 py-[100px]">
-    <div class="grid gap-10 md:grid-cols-2">
-        {{ collection:testimonials }}
-            <figure class="flex flex-col bg-mist p-10">
-                <blockquote class="grow font-serif text-[20px] leading-[32px] text-primary">
-                    {{ if intro }}<span class="block text-[16px] leading-6 text-body not-italic">{{ intro }}</span>{{ /if }}
-                    “{{ quote }}”
-                </blockquote>
-                <figcaption class="mt-6 border-t border-[#bbcfdb] pt-5">
-                    <div class="font-serif text-[20px] font-medium text-secondary">{{ title }}</div>
-                    <div class="text-[14px] leading-[21px]">{{ company }}{{ if description }} | {{ description }}{{ /if }}</div>
-                </figcaption>
-            </figure>
-        {{ /collection:testimonials }}
+{{# First half of the testimonials in the left column, the rest on the right (order is set in the Testimonials collection) #}}
+<section class="grid gap-5 px-5 pt-20 md:grid-cols-2">
+    <div class="space-y-5">
+        {{ collection:testimonials }}{{ if index * 2 < total_results }}{{ partial:testimonial_card }}{{ /if }}{{ /collection:testimonials }}
+    </div>
+    <div class="space-y-5">
+        {{ collection:testimonials }}{{ if index * 2 >= total_results }}{{ partial:testimonial_card }}{{ /if }}{{ /collection:testimonials }}
     </div>
 </section>

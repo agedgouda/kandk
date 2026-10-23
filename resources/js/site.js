@@ -67,3 +67,36 @@ document.querySelectorAll('[data-load-more]').forEach((grid) => {
 
     update();
 });
+
+// Masonry: move each card into the shortest column (only when there is more than one column)
+document.querySelectorAll('[data-masonry]').forEach((grid) => {
+    const cards = [...grid.children];
+    let lastCount = 0;
+
+    const layout = () => {
+        const count = getComputedStyle(grid).gridTemplateColumns.split(' ').length;
+        if (count === lastCount) return;
+        lastCount = count;
+        cards.forEach((card) => card.remove());
+        grid.querySelectorAll('[data-masonry-col]').forEach((col) => col.remove());
+        if (count < 2) { cards.forEach((card) => grid.append(card)); return; }
+        const cols = Array.from({ length: count }, () => {
+            const col = document.createElement('div');
+            col.dataset.masonryCol = '';
+            grid.append(col);
+            return col;
+        });
+        cards.forEach((card) => cols.reduce((a, b) => (b.offsetHeight < a.offsetHeight ? b : a)).append(card));
+    };
+
+    layout();
+    window.addEventListener('resize', layout);
+});
+
+// Character counter under text areas
+document.querySelectorAll('textarea[data-counter]').forEach((area) => {
+    const count = area.parentElement.querySelector('[data-counter-count]');
+    const update = () => { count.textContent = area.value.length; };
+    area.addEventListener('input', update);
+    update();
+});

@@ -1,15 +1,16 @@
-<section class="flex flex-col lg:flex-row">
-    <div class="bg-mist p-[10px] lg:w-[64.1%]">
-        <div class="px-5 py-5 md:px-10">
-            <h2 class="font-serif text-[30px] leading-[1.3] text-primary md:text-[42px] md:leading-[54px]">{{ heading }}</h2>
-            <div class="mt-5 text-[18px] leading-[28px] text-primary md:text-[22px] md:leading-[33px] [&_p]:mb-5">{{ text }}</div>
+<section class="flex flex-col md:flex-row" style="--h-phone: {{ heading_size_phone !== null ? heading_size_phone : 28 }}px; --t-phone: {{ text_size_phone !== null ? text_size_phone : 18 }}px; --t-phone-lh: {{ (text_size_phone ?? 18) == 16 ? '1.4' : '1.5' }}">
+    <div class="bg-mist p-[10px] md:w-[64.17%]">
+        <div class="px-[10px] pt-[10px] pb-[13px] md:pt-5 md:pr-0 md:pb-[70px] md:pl-10">
+            <h2 class="font-serif text-[length:var(--h-phone)] leading-[51px] text-primary md:text-[42px] md:leading-[54px]">{{ heading }}</h2>
+            <div class="mt-5 text-[length:var(--t-phone)] tracking-normal leading-[var(--t-phone-lh)] text-primary md:mt-[60px] md:text-[22px] md:leading-[33px] [&_p+p]:mt-5">{{ text }}</div>
         </div>
     </div>
-    <nav class="bg-primary px-10 py-5 lg:w-[35.9%]" aria-label="Services">
-        <ul class="divide-y divide-white font-serif text-[24px] leading-[30px] md:text-[28px] md:leading-[34px]">
+    {{# The live site hides this list on phones #}}
+    <nav class="hidden bg-primary px-10 py-5 md:block md:w-[35.83%]" aria-label="Services">
+        <ul class="font-serif text-[28px] leading-[34px]">
             {{ nav:services_sidebar }}
-                <li class="py-[25px] first:pt-[25px]">
-                    <a href="{{ url }}" class="{{ is_current ? 'text-secondary' : 'text-white hover:text-secondary' }}">{{ title }}</a>
+                <li class="py-[25px] [&+&]:relative [&+&]:mt-[31px] [&+&]:before:absolute [&+&]:before:inset-x-0 [&+&]:before:-top-4 [&+&]:before:border-t [&+&]:before:border-white">
+                    <a href="{{ url }}" class="{{ is_current ? 'text-[#0f8bb8]' : 'text-white hover:text-[#0f8bb8]' }}">{{ title }}</a>
                 </li>
             {{ /nav:services_sidebar }}
         </ul>

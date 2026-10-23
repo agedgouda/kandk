@@ -1,0 +1,9 @@
+<figure class="rounded-[40px] border-3 border-mist bg-mist p-[50px]">
+    <blockquote class="font-serif text-[24px] leading-[36px] text-primary md:text-[20px] md:leading-[30px]">
+        {{ if intro }}{{ intro }} “{{ quote | replace('“', '') | replace('”', '') }}”{{ else }}{{ quote | replace('“', '') | replace('”', '') }}{{ /if }}
+    </blockquote>
+    <figcaption class="mt-5 text-[16px] leading-[22.4px] md:leading-6">
+        <span class="text-primary">{{ title }}</span>
+        <span class="block text-[#0f8bb8] md:ml-[5px] md:inline-block">{{ company }}{{ if description }} | {{ description }}{{ /if }}</span>
+    </figcaption>
+</figure>

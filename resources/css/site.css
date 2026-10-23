@@ -36,9 +36,39 @@
     unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 
+/* Used only by the case study "More Case Studies" heading and Previous/Next links, like the live site */
+@font-face {
+    font-family: "Merriweather";
+    font-style: normal;
+    font-display: swap;
+    font-weight: 300;
+    src: url("/fonts/merriweather-latin-300-normal.woff2") format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+    font-family: "Merriweather";
+    font-style: normal;
+    font-display: swap;
+    font-weight: 400;
+    src: url("/fonts/merriweather-latin-400-normal.woff2") format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-display: swap;
+    font-weight: 400;
+    src: url("/fonts/montserrat-latin-400-normal.woff2") format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 @theme {
     --font-serif: "Gelasio", ui-serif, Georgia, serif;
     --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+    /* Some live-site widgets fall back to the device font; matched where they do */
+    --font-merriweather: "Merriweather", sans-serif;
+    --font-montserrat: "Montserrat", sans-serif;
+    --font-system: -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
 
     /* secondary and accent are a shade darker than the live site so white text on them is readable (WCAG AA) */
     --color-primary: #15517d;
@@ -63,4 +93,20 @@
     & strong { font-weight: 700; color: var(--color-primary); }
     & a { color: var(--color-secondary); }
     & a:hover { color: var(--color-primary); }
+}
+
+/* Form colors, matching the live site's two forms */
+.form-contact { --label: #464646; --field: #f2f5f6; }
+.form-careers { --label: #112337; --field: #bed8e0; }
+
+@utility tracking-body {
+    letter-spacing: -0.1px;
+}
+
+/* The live site tightens letter spacing (-0.1px, set on <body>) only for 16px body text; headings and other sizes use normal spacing */
+:is(h1, h2, h3, h4, h5, h6, .font-serif, button, [class*="text-[1"]:not([class*="text-[16px]"]), [class*="text-[2"], [class*="text-[3"], [class*="text-[4"], [class*="text-[5"]):not(.tracking-body) {
+    letter-spacing: normal;
+}
+:is(h1, h2, h3, h4, h5, h6)[class*="text-[16px]"] {
+    letter-spacing: -0.1px;
 }

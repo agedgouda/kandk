@@ -9,16 +9,17 @@ blocks:
     enabled: true
     image: pages/BDO-hero.webp
     heading: 'BDO Alliance USA'
+    heading_size_phone: 34
+    heading_line_height_phone: 48
   -
     id: 9ad63e77
     type: intro
     enabled: true
     heading: 'Expanding Our Capabilities with our Alliance Membership'
     heading_align: left
-    text: |-
-      As an independent member of the BDO Alliance USA, Kaufman and Kabani significantly enhances the value we bring to your business. This nationwide association comprises independently owned accounting, consulting, and service firms, all sharing our commitment to exceptional client service.
-
-      Through our participation in the BDO Alliance USA, we gain access to an expansive network and a wealth of resources that directly benefit our clients. This strategic alliance allows us to:
+    text: 'As an independent member of the BDO Alliance USA, Kaufman and Kabani significantly enhances the value we bring to your business. This nationwide association comprises independently owned accounting, consulting, and service firms, all sharing our commitment to exceptional client service.'
+    heading_size_phone: 38
+    subheading: 'Through our participation in the BDO Alliance USA, we gain access to an expansive network and a wealth of resources that directly benefit our clients. This strategic alliance allows us to:'
   -
     id: 0f943867
     type: feature_list
@@ -49,19 +50,21 @@ blocks:
         id: 1bdb26d9
         label: 'Connect You with Key Business Contacts:'
         text: 'We can facilitate valuable introductions to business contacts throughout the U.S., fostering networking and growth opportunities for your company.'
+    style: plain
+    background: gray
+    first_column_width: 710
   -
     id: 6b897408
     type: rich_text
     enabled: true
     content: |-
-      **The BDO Alliance USA provides us with the essential tools to serve you with greater flexibility, efficiency, and cost-effectiveness. This means you receive the focused attention of a local firm backed by the comprehensive resources of a national and international powerhouse.**
-
-      ## About the BDO Alliance USA and BDO Global Network
-
       The BDO Alliance USA is a subsidiary of BDO USA, LLP, a leading accounting and advisory firm with over a century of providing quality service through experienced professionals. BDO USA, LLP serves clients nationwide through 58 offices and more than 400 independent Alliance firm locations.
 
       Globally, BDO is a brand name for an international network of independent member firms. As an independent Member Firm of BDO International Limited, BDO serves multinational clients through a vast global network of 1,328 offices in 151 countries. This extensive reach ensures that no matter where your business takes you, you have access to consistent, high-quality support.
     image: pages/bdo.png
+    lead: 'The BDO Alliance USA provides us with the essential tools to serve you with greater flexibility, efficiency, and cost-effectiveness. This means you receive the focused attention of a local firm backed by the comprehensive resources of a national and international powerhouse.'
+    heading: 'About the BDO Alliance USA and BDO Global Network'
+    background: gray
   -
     id: 1a7ac793
     type: text_section
@@ -69,6 +72,11 @@ blocks:
     heading: 'Recent Updates and Insights'
     heading_style: large
     text: 'As an independent member of the **BDO Alliance USA** , Kaufman & Kabani continuously benefits from the latest updates and insights from one of the world’s leading accounting and consulting networks. This affiliation grants us real-time access to advanced tools, cutting-edge research, and specialized knowledge in areas like **innovation, AI, tax policy changes, and complex regulatory shifts** . These critical insights empower us to provide you with the most current, effective, and forward-thinking **accounting, tax, and business strategies** , ensuring your business remains agile and competitive in today’s dynamic economic landscape.'
+    indent: 40
+    space_above: 150
+    space_above_phone: 19
+    heading_size_phone: 38
+    indent_phone: 20
   -
     id: 430c97fe
     type: posts_grid

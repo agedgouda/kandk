@@ -1,3 +1,5 @@
 {{ blocks }}
+    {{ if hide_on_phone }}<div class="max-md:hidden">{{ /if }}
     {{ partial src="blocks/{type}" }}
+    {{ if hide_on_phone }}</div>{{ /if }}
 {{ /blocks }}

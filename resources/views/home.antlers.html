@@ -1,12 +1,12 @@
 {{# Hero slider: fade + ken burns, arrows only #}}
-<section class="relative mt-[49px] h-[400px] overflow-hidden bg-primary md:h-[550px]" data-slider>
+<section class="relative h-[318px] overflow-hidden bg-primary md:mt-[49px] md:h-[550px]" data-slider>
     {{ slides }}
         <div class="absolute inset-0 transition-opacity duration-[2000ms] {{ first ? 'opacity-100' : 'pointer-events-none opacity-0' }}" data-slide>
             {{ partial:img :image="image" sizes="100vw" :priority="first" class="absolute inset-0 size-full object-cover transition-transform duration-[5400ms] ease-linear" extra="data-slide-bg" }}
-            <{{ url ? 'a' : 'div' }} {{ if url }}href="{{ url }}"{{ /if }} class="relative flex h-full items-center px-12 md:pl-[100px]">
-                <div class="max-w-[74%] [text-shadow:0_0_15px_rgba(0,0,0,0.3)]">
-                    <h2 class="mb-5 font-serif text-[34px] leading-[44px] font-medium text-white md:text-[52px] md:leading-[62px]">{{ heading | nl2br }}</h2>
-                    {{ if button }}<span class="inline-block rounded-[3px] bg-secondary px-6 py-3 text-[16px] leading-4 uppercase [word-spacing:1px] text-white transition-colors [text-shadow:none] hover:bg-accent">{{ button }}</span>{{ /if }}
+            <{{ url ? 'a' : 'div' }} {{ if url }}href="{{ url }}"{{ /if }} class="relative flex h-full items-center px-[30px] md:pr-12 md:pl-[100px]">
+                <div class="max-w-[306px] [text-shadow:0_0_15px_rgba(0,0,0,0.3)] md:max-w-[615px]">
+                    <h2 class="mb-5 font-serif text-[38px] leading-[38px] text-white md:mb-[30px] md:text-[52px] md:leading-[62px] md:font-medium">{{ heading | nl2br }}</h2>
+                    {{ if button }}<span class="inline-block rounded-[3px] border-2 border-secondary bg-secondary px-6 py-3 text-[16px] leading-4 uppercase [word-spacing:1px] text-white transition-colors [text-shadow:none] hover:bg-accent">{{ button }}</span>{{ /if }}
                 </div>
             </{{ url ? 'a' : 'div' }}>
         </div>
@@ -22,8 +22,8 @@
 
 {{# Intro + Recent updates #}}
 <section class="mt-20 flex flex-col px-[10px] py-[10px] lg:flex-row">
-    <div class="px-5 pb-10 lg:w-[62.4%] lg:pt-0 lg:pr-[60px] lg:pb-0 lg:pl-10">
-        <h2 class="font-serif text-[30px] leading-[1.3] text-primary md:text-[42px] md:leading-[54px]">{{ intro }}</h2>
+    <div class="pb-[70px] md:px-5 lg:w-[62.4%] lg:pt-0 lg:pr-[60px] lg:pb-0 lg:pl-10">
+        <h2 class="text-center font-serif text-[30px] leading-[48px] text-primary md:text-left md:text-[42px] md:leading-[54px]">{{ intro }}</h2>
     </div>
     <div class="self-start bg-mist p-[10px] lg:w-[37.6%]">
         <h2 class="mb-5 font-serif text-[28px] leading-[34px] text-primary">{{ updates_title }}</h2>
@@ -35,15 +35,15 @@
                             <svg class="size-[10px] fill-current group-data-open:hidden" viewBox="0 0 448 512" aria-hidden="true"><path d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"/></svg>
                             <svg class="hidden size-[10px] fill-current group-data-open:block" viewBox="0 0 448 512" aria-hidden="true"><path d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"/></svg>
                         </span>
-                        <span class="flex items-center px-5 py-[1px] text-[16px] leading-6">{{ title }}</span>
+                        <span class="flex items-center px-5 py-[1px] font-system text-[16px] leading-6 tracking-normal">{{ title }}</span>
                     </button>
                     <div class="hidden bg-mist p-[30px] group-data-open:block">
                         <a href="{{ url }}" class="block" tabindex="-1" aria-hidden="true">{{ partial:img :image="image" widths="400,800" sizes="(min-width: 1024px) 30vw, 100vw" class="h-[200px] w-full object-cover" }}</a>
                         <div class="mt-[30px]">
                             <div class="text-[16px] leading-6 text-black">{{ title }}</div>
-                            <div class="mt-[10px] text-[16px] leading-4 text-body">{{ date format="d F Y" }}</div>
-                            {{ if excerpt }}<div class="mt-[10px] text-[16px] leading-6 text-[#666]">{{ excerpt | truncate(110, '...') }}</div>{{ /if }}
-                            <a href="{{ url }}" class="mt-5 inline-block bg-primary p-[5px] text-[16px] leading-6 text-white transition-colors hover:bg-secondary">Read More<span class="sr-only">: {{ title }}</span></a>
+                            <div class="mt-[10px] font-system text-[16px] leading-4 tracking-normal text-body">{{ date format="d F Y" }}</div>
+                            {{ if excerpt }}<div class="mt-[10px] font-system text-[16px] leading-6 tracking-normal text-[#666]">{{ excerpt | truncate(110, '...') }}</div>{{ /if }}
+                            <a href="{{ url }}" class="mt-5 inline-block bg-primary p-[5px] font-system text-[16px] leading-6 tracking-normal text-white transition-colors hover:bg-secondary">Read More<span class="sr-only">: {{ title }}</span></a>
                         </div>
                     </div>
                 </div>
@@ -54,11 +54,11 @@
 
 {{# Why choose #}}
 <section>
-    <h2 class="px-5 pt-[70px] font-serif text-[32px] leading-[1.25] text-primary md:pl-[50px] md:text-[42px] md:leading-[54px]">{{ why_title }}</h2>
-    <div class="mt-10 grid gap-5 px-5 sm:grid-cols-2 md:mt-[90px] lg:grid-cols-4 lg:px-10">
+    <h2 class="px-[10px] pt-[103px] font-serif text-[32px] leading-[54px] text-primary md:pt-[70px] md:pl-[50px] md:text-[42px]">{{ why_title }}</h2>
+    <div class="mt-4 grid sm:grid-cols-2 md:mt-[90px] md:gap-5 md:px-5 lg:grid-cols-4 lg:px-10">
         {{ reasons }}
             <div class="{{ color }} p-[25px] text-center text-white lg:min-h-[391px]">
-                {{ partial:img :image="icon" widths="81,162,243" sizes="81px" class="mx-auto size-[81px]" }}
+                {{ partial:img :image="icon" widths="102,204,306" sizes="(min-width: 768px) 83px, 102px" class="mx-auto size-[102px] md:size-[83px]" }}
                 <h3 class="mt-[34px] font-serif text-[28px] leading-[34px]">{{ title }}</h3>
                 <p class="mt-5 text-[18px] leading-[26px]">{{ text }}</p>
             </div>
@@ -72,12 +72,12 @@
 </section>
 
 {{# Services #}}
-<section class="bg-mist px-5 pt-[60px] pb-[100px] md:px-[60px]">
-    <h2 class="mt-[50px] text-center font-serif text-[32px] leading-[1.25] text-primary md:text-[42px] md:leading-[54px]">{{ services_title }}</h2>
-    <div class="mt-10 grid gap-x-10 gap-y-[60px] md:grid-cols-2 md:px-5">
+<section class="bg-mist pt-[43px] pb-5 md:px-[60px] md:pt-[60px] md:pb-[100px]">
+    <h2 class="text-center font-serif text-[32px] leading-[54px] text-primary md:mt-[50px] md:text-[42px]">{{ services_title }}</h2>
+    <div class="mt-[47px] grid gap-x-5 gap-y-10 px-5 md:mt-10 md:grid-cols-2 md:gap-y-[60px] md:px-0 lg:grid-cols-[620px_620px] lg:pl-[10px]">
         {{ services }}
-            <div class="text-center">
-                <h3 class="font-serif text-[28px] leading-[34px] text-secondary">{{ title }}</h3>
+            <div class="text-center lg:px-[10px]">
+                <h3 class="font-serif text-[28px] leading-[34px] text-[#0f8bb8]">{{ title }}</h3>
                 <p class="mt-5 px-[10px] text-[18px] leading-[26px]">{{ text }}</p>
                 <a href="{{ url }}" class="mt-10 inline-block rounded-[3px] bg-secondary px-6 py-3 text-[18px] leading-[18px] uppercase text-white transition-colors hover:bg-accent">{{ button }}</a>
             </div>
@@ -90,41 +90,19 @@
     {{ partial:img :image="cta_image" class="absolute inset-0 size-full object-cover transition-transform duration-[1500ms] group-hover:scale-110" }}
     <span class="absolute inset-0 bg-[#15517d9e] transition-colors duration-[1500ms] group-hover:bg-[#15517d70]"></span>
     <span class="relative block">
-        <span class="block font-serif text-[32px] leading-[1.25] md:text-[42px] md:leading-[54px]">{{ cta_title }}</span>
-        <span class="mt-[55px] block text-[16px] leading-6">{{ cta_text }}</span>
+        <span class="block font-serif text-[42px] leading-[51px] md:leading-[54px]">{{ cta_title }}</span>
+        <span class="mt-[55px] block font-system text-[16px] leading-6 tracking-normal">{{ cta_text }}</span>
         <span class="mt-[60px] inline-block rounded-[3px] border-2 border-transparent bg-secondary px-6 py-3 text-[18px] leading-[18px] uppercase transition-colors group-hover:bg-accent">{{ cta_button }}</span>
     </span>
 </a>
 
 {{# Case studies #}}
-<section class="mt-[100px] mb-[120px] px-5 md:mt-[150px] md:px-10">
-    <h2 class="font-serif text-[32px] leading-[1.25] text-primary md:text-[42px] md:leading-[54px]">{{ case_studies_title }}</h2>
-    <div class="mt-10 text-[16px] leading-6 [&_a]:text-[#333]">{{ case_studies_text }}</div>
-    <div class="-mx-[10px] mt-10 grid sm:grid-cols-2 lg:grid-cols-3">
-        {{ collection:case_studies }}
-            {{ partial:case_study_card }}
-        {{ /collection:case_studies }}
-    </div>
-</section>
+{{ partial src="blocks/case_studies" :heading="case_studies_title" :text="case_studies_text" no_load_more="true" }}
 
 {{# Testimonial #}}
 {{ testimonial }}
-    {{ partial:testimonial }}
+    {{ partial:testimonial inset="50" }}
 {{ /testimonial }}
 
-{{# Careers #}}
-<section class="relative flex min-h-[500px] items-center overflow-hidden py-[120px]">
-    {{ partial:img :image="careers_image" class="absolute inset-0 size-full object-cover" }}
-    <div class="absolute inset-0 bg-secondary opacity-[0.26]"></div>
-    <div class="relative grid w-full gap-5 px-5 lg:grid-cols-[581px_1fr] lg:pr-[71px] lg:pl-0">
-        <div class="hidden lg:block"></div>
-        <div class="p-[10px] text-white">
-            <h2 class="font-serif text-[32px] leading-[1.25] md:text-[42px] md:leading-[52px]">{{ careers_title }}</h2>
-            <h3 class="mt-5 text-[22px] leading-[1.5] md:text-[28px] md:leading-[54px]">{{ careers_subtitle }}</h3>
-            <p class="mt-5 text-[16px] leading-6">{{ careers_text }}</p>
-            <div class="mt-10 text-right">
-                <a href="{{ careers_url }}" class="inline-block rounded-[3px] bg-secondary px-6 py-3 text-[18px] leading-[18px] uppercase transition-colors hover:bg-accent">{{ careers_button }}</a>
-            </div>
-        </div>
-    </div>
-</section>
+{{# Careers: same section as the page builder's careers banner, with the home page's phone settings #}}
+{{ partial src="blocks/careers_banner" :image="careers_image" :title="careers_title" :subtitle="careers_subtitle" :text="careers_text" :button_text="careers_button" :button_url="careers_url" heading_size_phone="42" heading_line_height_phone="52" top_phone="44" inset_phone="10" hide_subtitle_phone="true" site_font_phone="true" text_line_height_phone="22.4" }}

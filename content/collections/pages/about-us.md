@@ -21,6 +21,11 @@ blocks:
     text: 'Since our founding in 1981, Kaufman & Kabani has evolved beyond a traditional accounting firm. We’ve transformed into a comprehensive, client-focused practice dedicated to serving middle-market, closely-held businesses and their owners. Our mission is to meet the dynamic needs of today’s business environment, acting as your trusted strategic advisor.'
     button_text: 'Our Team'
     button_url: /our-team
+    heading_size_phone: 38
+    text_size_phone: 22
+    phone_align: center
+    button_inset: 10
+    button_inset_phone: 31
   -
     id: 07768c71
     type: services_accordion
@@ -79,4 +84,6 @@ blocks:
     text: 'At Kaufman & Kabani, we’re dedicated to “Excellence in building client success,” a mission that extends to our team. If you’re a self-starter with at least three years of public accounting experience and talent in accounting, business consulting, or tax planning, we invite you to join our diverse client-focused practice.'
     button_text: 'Job Openings'
     button_url: /careers
+    text_line_height_phone: 22.4
+    site_font_phone: true
 ---

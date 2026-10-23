@@ -29,6 +29,11 @@ tabs:
                       fields:
                         - { handle: image, field: { type: assets, display: 'Background Image', container: assets, folder: pages, max_files: 1 } }
                         - { handle: heading, field: { type: textarea, display: Heading, instructions: 'Press Enter for a line break.' } }
+                        - { handle: indent, field: { type: integer, display: 'Text Indent (px)', instructions: 'Space before the heading on computers. Default 50.', width: 25 } }
+                        - { handle: indent_phone, field: { type: integer, display: 'Text Indent on Phones (px)', instructions: 'Default 20.', width: 25 } }
+                        - { handle: heading_size_phone, field: { type: integer, display: 'Heading Size on Phones (px)', instructions: 'Default 42.', width: 25 } }
+                        - { handle: heading_line_height_phone, field: { type: integer, display: 'Line Height on Phones (px)', instructions: 'Default 51.', width: 25 } }
+                        - { handle: hide_on_phone, field: { type: toggle, display: 'Hide on Phones', width: 25 } }
                     intro:
                       display: 'Intro (gray box)'
                       icon: text-formatting-heading-1
@@ -38,6 +43,15 @@ tabs:
                         - { handle: text, field: { type: markdown, display: Text } }
                         - { handle: button_text, field: { type: text, display: 'Button Text', width: 50 } }
                         - { handle: button_url, field: { type: text, display: 'Button Link', width: 50 } }
+                        - { handle: indent, field: { type: integer, display: 'Text Indent (px)', instructions: 'Space before the text on computers. Default 50.', width: 25 } }
+                        - { handle: heading_size_phone, field: { type: integer, display: 'Heading Size on Phones (px)', instructions: 'Default 28.', width: 25 } }
+                        - { handle: text_size_phone, field: { type: integer, display: 'Text Size on Phones (px)', instructions: 'Default 18.', width: 25 } }
+                        - { handle: text_size, field: { type: integer, display: 'Text Size (px)', instructions: 'Default 22.', width: 25 } }
+                        - { handle: phone_align, field: { type: button_group, display: 'Alignment on Phones', options: { left: Left, center: Center }, default: left, width: 25 } }
+                        - { handle: button_inset, field: { type: integer, display: 'Button Space from Right (px)', instructions: 'Default 50.', width: 25 } }
+                        - { handle: button_inset_phone, field: { type: integer, display: 'Button Space from Right on Phones (px)', instructions: 'Default 20.', width: 25 } }
+                        - { handle: subheading, field: { type: textarea, display: 'Subheading (optional)', instructions: 'Shown under the text in large serif type.' } }
+                        - { handle: hide_on_phone, field: { type: toggle, display: 'Hide on Phones', width: 25 } }
                     service_intro:
                       display: 'Service Intro (with services sidebar)'
                       icon: layout-col-2
@@ -45,6 +59,9 @@ tabs:
                       fields:
                         - { handle: heading, field: { type: text, display: Heading } }
                         - { handle: text, field: { type: markdown, display: Text } }
+                        - { handle: heading_size_phone, field: { type: integer, display: 'Heading Size on Phones (px)', instructions: 'Default 28.', width: 25 } }
+                        - { handle: text_size_phone, field: { type: integer, display: 'Text Size on Phones (px)', instructions: 'Default 18.', width: 25 } }
+                        - { handle: hide_on_phone, field: { type: toggle, display: 'Hide on Phones', width: 25 } }
                     text_section:
                       display: 'Heading + Text'
                       icon: text-formatting-paragraph
@@ -52,6 +69,16 @@ tabs:
                         - { handle: heading, field: { type: text, display: Heading } }
                         - { handle: heading_style, field: { type: button_group, display: 'Heading Style', options: { small: 'Small (blue sans)', large: 'Large (serif)' }, default: small } }
                         - { handle: text, field: { type: markdown, display: Text } }
+                        - { handle: indent, field: { type: integer, display: 'Text Indent (px)', instructions: 'Computers only. Default 50.', width: 25 } }
+                        - { handle: system_font, field: { type: toggle, display: 'Device Font for Text', instructions: 'Matches live-site sections that show the text in the device font.', width: 25 } }
+                        - { handle: style, field: { type: button_group, display: Style, options: { plain: Plain, band: 'Blue Band' }, default: plain, width: 25 } }
+                        - { handle: space_above, field: { type: integer, display: 'Space Above (px)', instructions: 'Default 80.', width: 25 } }
+                        - { handle: space_above_phone, field: { type: integer, display: 'Space Above on Phones (px)', instructions: 'Default 80.', width: 25 } }
+                        - { handle: heading_size_phone, field: { type: integer, display: 'Large Heading Size on Phones (px)', instructions: 'Default 32.', width: 25 } }
+                        - { handle: indent_phone, field: { type: integer, display: 'Text Indent on Phones (px)', instructions: 'Default 10.', width: 25 } }
+                        - { handle: text_gap, field: { type: integer, display: 'Space Under Large Heading (px)', instructions: 'Default 40.', width: 25 } }
+                        - { handle: text_gap_phone, field: { type: integer, display: 'Space Under Large Heading on Phones (px)', instructions: 'Default 30.', width: 25 } }
+                        - { handle: hide_on_phone, field: { type: toggle, display: 'Hide on Phones', width: 25 } }
                     feature_list:
                       display: 'Bullet List'
                       icon: text-formatting-list-bullets
@@ -67,17 +94,50 @@ tabs:
                             fields:
                               - { handle: label, field: { type: text, display: 'Bold Label' } }
                               - { handle: text, field: { type: textarea, display: Text } }
+                        - { handle: first_column_width, field: { type: integer, display: 'First Column Width (px)', instructions: 'Two-column lists on computers. Default 680.', width: 25 } }
+                        - { handle: style, field: { type: button_group, display: Style, options: { lines: 'Divider Lines', plain: Plain }, default: lines, width: 25 } }
+                        - { handle: background, field: { type: button_group, display: Background, options: { white: White, gray: Gray }, default: white, width: 25 } }
+                        - { handle: hide_on_phone, field: { type: toggle, display: 'Hide on Phones', width: 25 } }
+                    two_lists:
+                      display: 'Two Lists Side by Side'
+                      icon: layout-col-2
+                      fields:
+                        - { handle: heading, field: { type: text, display: Heading } }
+                        - handle: lists
+                          field:
+                            type: grid
+                            display: Lists
+                            max_rows: 2
+                            add_row: 'Add List'
+                            fields:
+                              - { handle: heading, field: { type: text, display: Heading } }
+                              - { handle: text, field: { type: textarea, display: 'Text Above List' } }
+                              - handle: items
+                                field:
+                                  type: grid
+                                  display: Items
+                                  add_row: 'Add Item'
+                                  fields:
+                                    - { handle: label, field: { type: text, display: 'Bold Label' } }
+                                    - { handle: text, field: { type: textarea, display: Text } }
+                        - { handle: hide_on_phone, field: { type: toggle, display: 'Hide on Phones', width: 25 } }
                     note_band:
                       display: 'Highlighted Statement (gray band)'
                       icon: text-formatting-quote
                       fields:
                         - { handle: text, field: { type: textarea, display: Text } }
+                        - { handle: hide_on_phone, field: { type: toggle, display: 'Hide on Phones', width: 25 } }
                     rich_text:
                       display: 'Rich Text'
                       icon: text-formatting-paragraph
                       fields:
+                        - { handle: lead, field: { type: textarea, display: 'Lead Text (optional)', instructions: 'Larger text at the top.' } }
+                        - { handle: heading, field: { type: text, display: 'Heading (optional)' } }
                         - { handle: content, field: { type: markdown, display: Content } }
                         - { handle: image, field: { type: assets, display: 'Image (optional, shown on the right)', container: assets, folder: pages, max_files: 1 } }
+                        - { handle: background, field: { type: button_group, display: Background, options: { white: White, gray: Gray }, default: white, width: 25 } }
+                        - { handle: style, field: { type: button_group, display: Layout, options: { panel: 'Text + Image', document: 'Long Document' }, default: panel, width: 25 } }
+                        - { handle: hide_on_phone, field: { type: toggle, display: 'Hide on Phones', width: 25 } }
                 content:
                   display: 'Special Sections'
                   sets:
@@ -100,6 +160,7 @@ tabs:
                         - { handle: button_text, field: { type: text, display: 'Button Text', width: 50 } }
                         - { handle: button_url, field: { type: text, display: 'Button Link', width: 50 } }
                         - { handle: image, field: { type: assets, display: Image, container: assets, folder: pages, max_files: 1 } }
+                        - { handle: hide_on_phone, field: { type: toggle, display: 'Hide on Phones', width: 25 } }
                     image_text:
                       display: 'Text + Image'
                       icon: layout-col-2
@@ -107,12 +168,14 @@ tabs:
                         - { handle: heading, field: { type: text, display: Heading } }
                         - { handle: text, field: { type: markdown, display: Text } }
                         - { handle: image, field: { type: assets, display: Image, container: assets, folder: pages, max_files: 1 } }
+                        - { handle: hide_on_phone, field: { type: toggle, display: 'Hide on Phones', width: 25 } }
                     industries:
                       display: 'Industries List'
                       icon: text-formatting-list-bullets
                       fields:
                         - { handle: heading, field: { type: text, display: Heading } }
                         - { handle: items, field: { type: list, display: Industries } }
+                        - { handle: hide_on_phone, field: { type: toggle, display: 'Hide on Phones', width: 25 } }
                     team_member:
                       display: 'Team Member'
                       icon: users-multiple
@@ -123,6 +186,12 @@ tabs:
                         - { handle: email, field: { type: text, display: Email, width: 50 } }
                         - { handle: linkedin, field: { type: text, display: 'LinkedIn URL', width: 50 } }
                         - { handle: bio, field: { type: markdown, display: Bio } }
+                        - { handle: indent, field: { type: integer, display: 'Name Indent (px)', instructions: 'Default 50.', width: 25 } }
+                        - { handle: space_above, field: { type: integer, display: 'Space Above (px)', instructions: 'Default 70.', width: 25 } }
+                        - { handle: space_above_phone, field: { type: integer, display: 'Space Above on Phones (px)', instructions: 'Default 20.', width: 25 } }
+                        - { handle: name_gap, field: { type: integer, display: 'Space Under Role (px)', instructions: 'Default 10.', width: 25 } }
+                        - { handle: space_below, field: { type: integer, display: 'Space Below (px)', instructions: 'Default 30.', width: 25 } }
+                        - { handle: hide_on_phone, field: { type: toggle, display: 'Hide on Phones', width: 25 } }
                     case_studies:
                       display: 'Case Studies Grid'
                       icon: layout-grid
@@ -130,23 +199,36 @@ tabs:
                       fields:
                         - { handle: heading, field: { type: text, display: 'Heading (optional)' } }
                         - { handle: text, field: { type: markdown, display: 'Text (optional)' } }
+                        - { handle: inset_phone, field: { type: integer, display: 'Side Space on Phones (px)', instructions: 'Default 0.', width: 25 } }
+                        - { handle: hide_on_phone, field: { type: toggle, display: 'Hide on Phones', width: 25 } }
                     posts_grid:
                       display: 'Recent Updates Grid'
                       icon: layout-grid
                       instructions: 'Shows posts from the Recent Updates & Insights collection, newest first.'
                       fields:
                         - { handle: heading, field: { type: text, display: 'Heading (optional)' } }
-                        - { handle: per_page, field: { type: integer, display: 'Posts shown before Load More', default: 6 } }
+                        - { handle: per_page, field: { type: integer, display: 'Posts Shown', instructions: 'With Load More on, how many show before the button.', default: 6, width: 25 } }
+                        - { handle: columns, field: { type: button_group, display: Columns, options: { '3': Three, '4': Four }, default: '3', width: 25 } }
+                        - { handle: load_more, field: { type: toggle, display: 'Load More Button', width: 25 } }
+                        - { handle: space_above, field: { type: integer, display: 'Space Above (px)', instructions: 'Default 39.', width: 25 } }
+                        - { handle: space_above_phone, field: { type: integer, display: 'Space Above on Phones (px)', instructions: 'Default 41.', width: 25 } }
+                        - { handle: hide_on_phone, field: { type: toggle, display: 'Hide on Phones', width: 25 } }
                     testimonial:
                       display: Testimonial
                       icon: chat-bubble-text
                       fields:
                         - { handle: testimonial, field: { type: entries, display: Testimonial, collections: [testimonials], max_items: 1 } }
+                        - { handle: quote_size, field: { type: button_group, display: 'Quote Size', options: { large: Large, small: Small }, default: large, width: 25 } }
+                        - { handle: inset, field: { type: integer, display: 'Side Padding (px)', instructions: 'Default 40.', width: 25 } }
+                        - { handle: space_above, field: { type: integer, display: 'Space Above (px)', instructions: 'Default 80.', width: 25 } }
+                        - { handle: name_style_phone, field: { type: button_group, display: 'Name Style on Phones', options: { bold: Bold, plain: Plain }, default: bold, width: 25 } }
+                        - { handle: hide_on_phone, field: { type: toggle, display: 'Hide on Phones', width: 25 } }
                     testimonials_list:
                       display: 'All Testimonials'
                       icon: chat-bubble-text
                       fields:
                         - { handle: note, field: { type: html, html: 'Shows every entry from the Testimonials collection.' } }
+                        - { handle: hide_on_phone, field: { type: toggle, display: 'Hide on Phones', width: 25 } }
                     cta_banner:
                       display: 'Call to Action Banner'
                       icon: alert-alarm-bell
@@ -155,28 +237,43 @@ tabs:
                         - { handle: button_text, field: { type: text, display: 'Button Text', width: 50 } }
                         - { handle: button_url, field: { type: text, display: 'Button Link', width: 50 } }
                         - { handle: image, field: { type: assets, display: 'Background Image', container: assets, folder: pages, max_files: 1 } }
+                        - { handle: hide_on_phone, field: { type: toggle, display: 'Hide on Phones', width: 25 } }
                     careers_banner:
                       display: 'Careers Banner'
                       icon: users-multiple
                       fields:
                         - { handle: image, field: { type: assets, display: 'Background Image', container: assets, folder: pages, max_files: 1 } }
-                        - { handle: title, field: { type: text, display: Heading } }
+                        - { handle: title, field: { type: textarea, display: Heading, instructions: 'Press Enter for a line break on phones.' } }
                         - { handle: subtitle, field: { type: text, display: Subheading } }
                         - { handle: text, field: { type: textarea, display: Text } }
                         - { handle: button_text, field: { type: text, display: 'Button Text', width: 50 } }
                         - { handle: button_url, field: { type: text, display: 'Button Link', width: 50 } }
+                        - { handle: indent, field: { type: integer, display: 'Text Start (px from left)', instructions: 'Default 617.', width: 25 } }
+                        - { handle: heading_line_height, field: { type: integer, display: 'Heading Line Height (px)', instructions: 'Default 52.', width: 25 } }
+                        - { handle: subtitle_size, field: { type: integer, display: 'Subheading Size (px)', instructions: 'Default 28.', width: 25 } }
+                        - { handle: subtitle_line_height, field: { type: integer, display: 'Subheading Line Height (px)', instructions: 'Default 54.', width: 25 } }
+                        - { handle: heading_size_phone, field: { type: integer, display: 'Heading Size on Phones (px)', instructions: 'Default 38.', width: 25 } }
+                        - { handle: heading_line_height_phone, field: { type: integer, display: 'Heading Line Height on Phones (px)', instructions: 'Default 51.', width: 25 } }
+                        - { handle: text_line_height_phone, field: { type: float, display: 'Text Line Height on Phones (px)', instructions: 'Default 24.', width: 25 } }
+                        - { handle: top_phone, field: { type: integer, display: 'Top Space on Phones (px)', instructions: 'Default 10.', width: 25 } }
+                        - { handle: inset_phone, field: { type: integer, display: 'Side Space on Phones (px)', instructions: 'Default 10.', width: 25 } }
+                        - { handle: hide_subtitle_phone, field: { type: toggle, display: 'Hide Subheading on Phones', width: 25 } }
+                        - { handle: site_font_phone, field: { type: toggle, display: 'Site Font for Text on Phones', instructions: 'Off uses the device font, like the live site.', width: 25 } }
+                        - { handle: hide_on_phone, field: { type: toggle, display: 'Hide on Phones', width: 25 } }
                     contact:
                       display: 'Contact Form + Details'
                       icon: mail
                       fields:
                         - { handle: heading, field: { type: text, display: 'Details Heading' } }
                         - { handle: map_heading, field: { type: text, display: 'Map Heading' } }
+                        - { handle: hide_on_phone, field: { type: toggle, display: 'Hide on Phones', width: 25 } }
                     application_form:
                       display: 'Job Application Form'
                       icon: file-content-list
                       fields:
                         - { handle: heading, field: { type: text, display: Heading } }
                         - { handle: text, field: { type: textarea, display: Text } }
+                        - { handle: hide_on_phone, field: { type: toggle, display: 'Hide on Phones', width: 25 } }
   sidebar:
     display: Sidebar
     sections:

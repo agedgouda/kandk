@@ -1,12 +1,12 @@
-<section class="relative flex min-h-[500px] items-center overflow-hidden py-[120px]">
+{{# Sizes and spacing vary by page on the live site, so they are settings with the common values as defaults #}}
+<section class="relative flex items-center overflow-hidden px-[10px] pt-[var(--top-phone)] pb-[var(--bottom-phone)] md:min-h-[500px] md:px-0 md:py-[120px]" style="--indent: {{ indent !== null ? indent : 617 }}px; --h-lh: {{ heading_line_height !== null ? heading_line_height : 52 }}px; --sub: {{ subtitle_size !== null ? subtitle_size : 28 }}px; --sub-lh: {{ subtitle_line_height !== null ? subtitle_line_height : 54 }}px; --h-phone: {{ heading_size_phone !== null ? heading_size_phone : 38 }}px; --h-lh-phone: {{ heading_line_height_phone !== null ? heading_line_height_phone : 51 }}px; --t-lh-phone: {{ text_line_height_phone !== null ? text_line_height_phone : 24 }}px; --top-phone: {{ top_phone !== null ? top_phone : 10 }}px; --bottom-phone: {{ top_phone !== null && top_phone != 10 ? 0 : 10 }}px; --inset-phone: {{ inset_phone !== null ? inset_phone : 10 }}px">
     {{ partial:img :image="image" class="absolute inset-0 size-full object-cover" }}
     <div class="absolute inset-0 bg-[linear-gradient(264deg,#15517d_31%,rgba(21,81,125,0.15)_79%)] opacity-[0.76]"></div>
-    <div class="relative grid w-full gap-5 px-5 lg:grid-cols-[619px_1fr] lg:pr-[77px] lg:pl-0">
-        <div class="hidden lg:block"></div>
-        <div class="p-[10px] text-white">
-            <h2 class="font-serif text-[32px] leading-[1.25] md:text-[42px] md:leading-[52px]">{{ title }}</h2>
-            <h3 class="mt-5 text-[22px] leading-[1.4] md:text-[26px] md:leading-[32px]">{{ subtitle }}</h3>
-            <p class="mt-5 text-[16px] leading-6">{{ text }}</p>
+    <div class="relative w-full pl-[var(--inset-phone)] pr-[10px] text-right text-white md:w-auto md:max-w-none md:py-[10px] md:pr-0 md:pl-[var(--indent)] md:text-left">
+        <div class="md:w-[741px]">
+            <h2 class="font-serif text-[length:var(--h-phone)] leading-[var(--h-lh-phone)] md:text-[42px] md:leading-[var(--h-lh)]">{{ title | replace("\n", ' <br class="md:hidden">') }}</h2>
+            <h3 class="mt-5 text-[18px] leading-[26px] md:text-[length:var(--sub)] md:leading-[var(--sub-lh)] {{ hide_subtitle_phone ? 'max-md:hidden' : '' }}">{{ subtitle }}</h3>
+            <p class="mt-5 {{ site_font_phone ? 'font-sans' : 'font-system' }} text-[16px] leading-[var(--t-lh-phone)] tracking-normal md:font-system md:leading-6">{{ text }}</p>
             <div class="mt-10 text-right">
                 <a href="{{ button_url }}" class="inline-block rounded-[3px] bg-secondary px-6 py-3 text-[18px] leading-[18px] uppercase transition-colors hover:bg-accent">{{ button_text }}</a>
             </div>

@@ -1,7 +1,8 @@
-<section class="{{ spacing ?? 'mt-20' }} bg-secondary px-5 py-[100px] text-center text-white md:px-[50px] md:py-[150px]">
-    <p class="mb-5 font-serif text-[24px] leading-[1.45] md:text-[32px] md:leading-[46px]">
+{{# Block settings: quote_size (large|small), inset (px, computers), space_above (px), name_style_phone (bold|plain) #}}
+<section class="bg-secondary px-[10px] pt-[30px] pb-8 text-center text-white md:mt-[var(--above)] md:px-[var(--inset)] md:pt-[150px] md:pb-[152px]" style="--inset: {{ inset !== null ? inset : 40 }}px; --above: {{ space_above !== null ? space_above : 80 }}px">
+    <p class="mb-5 font-serif text-[24px] leading-[36px] {{ quote_size == 'small' ? 'md:text-[28px] md:leading-[34px]' : 'md:text-[32px] md:leading-[46px]' }}">
         {{ if intro }}{{ intro }}<br>“{{ quote }}”{{ else }}{{ quote }}{{ /if }}
     </p>
-    <div class="font-serif text-[22px] leading-[33px] font-medium">{{ title }}</div>
-    <div class="text-[16px] leading-6">{{ company }}{{ if description }}<br>{{ description }}{{ /if }}</div>
+    <div class="font-serif {{ name_style_phone == 'plain' ? 'text-[24px] leading-[36px] font-normal' : 'text-[22px] leading-[33px] font-semibold' }} md:text-[22px] md:leading-[33px] md:font-semibold">{{ title }}</div>
+    <div class="text-[16px] leading-[1.4] md:leading-6">{{ company }}{{ if description }}<br>{{ description }}{{ /if }}</div>
 </section>

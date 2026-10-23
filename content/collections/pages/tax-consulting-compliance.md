@@ -11,12 +11,15 @@ blocks:
     heading: |-
       Specialized Solutions
       for Your Success
+    indent: 20
   -
     id: '2e985541'
     type: service_intro
     enabled: true
     heading: 'Strategic Tax Consulting & Compliance: Minimize Liabilities, Maximize Opportunities'
     text: 'At Kaufman & Kabani, our tax practice is built on a proactive approach aimed at minimizing your tax exposures and liabilities through strategic planning and innovative solutions. Our dedicated team of tax professionals provides a comprehensive suite of tax consulting and tax compliance services, fully immersed in the complexities of taxation. We are committed to total engagement, ensuring prompt and tailored responses to your financial and planning needs, empowering you to achieve optimal tax outcomes.'
+    heading_size_phone: 30
+    text_size_phone: 16
   -
     id: 598fdc9b
     type: text_section
@@ -24,11 +27,12 @@ blocks:
     heading: 'Tax Consulting Services'
     heading_style: small
     text: 'We specialize in serving corporations, partnerships, and high-net-worth individuals, offering holistic tax services that address business and personal financial objectives. Our focused expertise allows us to deliver seamless corporate and partnership tax solutions while providing thorough, timely, and creative tax strategies for business owners and their families. We keep you informed of critical regulatory changes and emerging opportunities through regular communications and timely bulletins.'
+    indent: 40
   -
     id: 727bb8c0
     type: feature_list
     enabled: true
-    columns: '2'
+    columns: 1
     items:
       -
         id: 0968b32d
@@ -75,7 +79,7 @@ blocks:
     type: feature_list
     enabled: true
     heading: 'Tax Compliance Services'
-    columns: '2'
+    columns: 1
     items:
       -
         id: 65ab7b01
@@ -111,9 +115,15 @@ blocks:
     type: careers_banner
     enabled: true
     image: pages/career3.webp
-    title: 'Join Our Team: Your Growth, Our Priority'
+    title: |-
+      Join Our Team:
+      Your Growth,
+      Our Priority
     subtitle: 'Where Talent Thrives and Client Success is Our Shared Goal.'
     text: 'At Kaufman & Kabani, we’re dedicated to “Excellence in building client success,” a mission that extends to our team. If you’re a self-starter with at least three years of public accounting experience and talent in accounting, business consulting, or tax planning, we invite you to join our diverse client-focused practice.'
     button_text: 'Job Openings'
     button_url: /careers
+    indent: 635
+    subtitle_size: 26
+    subtitle_line_height: 32
 ---

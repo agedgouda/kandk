@@ -1,11 +1,13 @@
 <article class="p-[10px]">
-    <div class="h-full bg-white shadow-[0_0_10px_rgba(0,0,0,0.08)]">
-        <a href="{{ url }}" class="block" tabindex="-1" aria-hidden="true">{{ partial:img :image="image" widths="400,800" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" class="aspect-[300/153] w-full object-cover" }}</a>
+    <div class="h-full bg-white">
+        <a href="{{ url }}" class="group relative block" tabindex="-1" aria-hidden="true">
+            {{ partial:img :image="image" widths="400,800" sizes="(min-width: 1024px) {{ compact ? '325px' : '440px' }}, 100vw" class="{{ compact ? 'aspect-[325/166]' : 'h-[224px]' }} w-full object-cover" }}
+            <span class="absolute inset-0 bg-black/75 opacity-0 transition-opacity group-hover:opacity-100"></span>
+        </a>
         <div class="p-[15px]">
-            <p class="text-[14px] text-accent">{{ date format="d F Y" }}</p>
-            <h3 class="mt-1 font-serif text-[22px] leading-[30px]"><a href="{{ url }}" class="text-primary hover:text-secondary">{{ title }}</a></h3>
-            <p class="mt-3 text-[14px] leading-[21px]">{{ excerpt | truncate(110, '...') }}</p>
-            <a href="{{ url }}" class="block pt-5 text-[16px] leading-6 uppercase text-secondary hover:text-primary">Read More<span class="sr-only">: {{ title }}</span></a>
+            <h3 class="mt-[10px] mb-[5px] font-serif {{ compact ? 'text-[26px] leading-[51px] md:text-[28px] md:leading-[34px]' : 'text-[24px] leading-[54px]' }}"><a href="{{ url }}" class="text-primary hover:text-secondary">{{ title }}</a></h3>
+            <p class="font-system text-[14px] leading-[21px] tracking-normal">{{ excerpt | replace('...', '') | explode(' ') | limit(10) | join(' ') }}...</p>
+            <a href="{{ url }}" class="block pt-5 text-[16px] leading-6 text-[#0f8bb8] uppercase hover:text-primary">Read More<span class="sr-only">: {{ title }}</span></a>
         </div>
     </div>
 </article>

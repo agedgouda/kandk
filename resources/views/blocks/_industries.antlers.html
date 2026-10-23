@@ -1,8 +1,9 @@
-<section class="px-5 pt-[60px] md:px-10">
-    <h2 class="px-5 text-[22px] leading-[34px] text-primary md:leading-[54px]">{{ heading }}</h2>
-    <ul class="mt-5 px-[10px] md:columns-2 md:gap-10">
+<section class="px-10 pt-[60px]">
+    <h2 class="text-[22px] leading-[51px] text-primary max-md:-mx-[30px] md:leading-[54px]">{{ heading }}</h2>
+    {{# The live site shows the first two names a little smaller than the rest #}}
+    <ul class="mt-[50px] space-y-5 px-[10px] text-center md:columns-2 md:gap-5">
         {{ items }}
-            <li class="break-inside-avoid border-b border-[#bbcfdb] py-[10px] text-[22px] leading-[54px] text-secondary">{{ value }}</li>
+            <li class="break-inside-avoid leading-[51px] text-[#0f8bb8] md:leading-[54px] {{ index < 2 ? 'text-[22px]' : 'text-[24px] font-light' }}">{{ value }}</li>
         {{ /items }}
     </ul>
 </section>

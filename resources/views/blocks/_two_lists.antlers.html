@@ -1,0 +1,16 @@
+<section class="px-[10px] pt-5 pb-[11px] md:px-10 md:pt-20 md:pb-[130px]">
+    <h2 class="font-serif text-[28px] leading-[51px] text-primary md:text-[42px] md:leading-[54px]">{{ heading }}</h2>
+    <div class="md:mt-[10px] md:grid md:grid-cols-2 md:gap-5">
+        {{ lists }}
+            <div class="mt-5 px-[10px] md:mt-0 md:first:pr-0 md:last:pl-0">
+                <h3 class="text-[18px] leading-[51px] text-[#0f8bb8] md:text-[22px] md:leading-[54px]">{{ heading }}</h3>
+                {{ if text }}<p class="mt-5 text-[16px] leading-[22.4px] md:leading-6">{{ text }}</p>{{ /if }}
+                <ul class="mt-[39px] md:mt-10">
+                    {{ items }}
+                        <li class="relative pb-[17px] text-[16px] leading-[22.4px] text-primary after:absolute after:inset-x-0 after:bottom-0 after:border-b after:border-primary last:pb-0 last:after:hidden md:leading-6 [&+&]:mt-[17px]">{{ if label }}<b>{{ label }}</b> {{ /if }}{{ text }}</li>
+                    {{ /items }}
+                </ul>
+            </div>
+        {{ /lists }}
+    </div>
+</section>

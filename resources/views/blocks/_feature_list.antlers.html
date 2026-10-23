@@ -1,23 +1,23 @@
-<section class="mt-5 px-5 md:px-10">
+<section class="{{ background == 'gray' ? 'bg-mist pt-5 pb-[10px] md:pt-[10px]' : 'mt-5' }} px-[10px] md:px-10" style="--col1: {{ first_column_width !== null ? first_column_width : 680 }}px">
     {{ if heading }}<h3 class="px-[10px] text-[22px] leading-[34px] text-primary md:leading-[54px]">{{ heading }}</h3>{{ /if }}
     {{ if text }}<div class="mb-5 px-[10px] text-[16px] leading-6">{{ text }}</div>{{ /if }}
     {{# Two columns: first half on the left, like the live site #}}
     {{ half = items | count | divide(2) | floor }}
-    <div class="{{ columns == '1' ? '' : 'grid md:grid-cols-2' }}">
+    <div class="{{ columns == '1' ? '' : 'grid md:grid-cols-[var(--col1)_1fr]' }} {{ style == 'plain' ? 'max-md:gap-5' : '' }}">
         <ul>
             {{ items }}{{ if columns == '1' || index < half }}
-                <li class="flex gap-1 px-[10px] pb-[13px] [&+&]:border-t [&+&]:border-[#bbcfdb] [&+&]:pt-[13px]">
+                <li class="flex gap-1 px-[10px] {{ style == 'plain' ? '[&+&]:mt-5' : 'pb-[12.5px] [&+&]:border-t [&+&]:border-[#bbcfdb] [&+&]:pt-[12.5px]' }}">
                     <svg class="mt-[5px] size-[14px] shrink-0 fill-secondary" viewBox="0 0 320 512" aria-hidden="true"><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg>
-                    <span class="pl-[5px] text-[16px] leading-6 text-primary">{{ if label }}<strong class="font-bold">{{ label }}</strong> {{ /if }}{{ text }}</span>
+                    <span class="pl-[5px] text-[16px] leading-[1.4] text-primary md:leading-6">{{ if label }}<strong class="font-bold">{{ label }}</strong> {{ /if }}{{ text }}</span>
                 </li>
             {{ /if }}{{ /items }}
         </ul>
         {{ if columns != '1' }}
             <ul>
                 {{ items }}{{ if index >= half }}
-                    <li class="flex gap-1 px-[10px] pb-[13px] [&+&]:border-t [&+&]:border-[#bbcfdb] [&+&]:pt-[13px]">
+                    <li class="flex gap-1 px-[10px] {{ style == 'plain' ? '[&+&]:mt-5' : 'pb-[12.5px] [&+&]:border-t [&+&]:border-[#bbcfdb] [&+&]:pt-[12.5px]' }}">
                         <svg class="mt-[5px] size-[14px] shrink-0 fill-secondary" viewBox="0 0 320 512" aria-hidden="true"><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg>
-                        <span class="pl-[5px] text-[16px] leading-6 text-primary">{{ if label }}<strong class="font-bold">{{ label }}</strong> {{ /if }}{{ text }}</span>
+                        <span class="pl-[5px] text-[16px] leading-[1.4] text-primary md:leading-6">{{ if label }}<strong class="font-bold">{{ label }}</strong> {{ /if }}{{ text }}</span>
                     </li>
                 {{ /if }}{{ /items }}
             </ul>

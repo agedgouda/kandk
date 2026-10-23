@@ -1,7 +1,8 @@
 title: 'Job Applications'
+# group: label shown above a pair of fields; sublabel: small label above the input
 fields:
-  - { handle: first_name, field: { type: text, display: First, validate: [required], width: 50 } }
-  - { handle: last_name, field: { type: text, display: Last, validate: [required], width: 50 } }
-  - { handle: email, field: { type: text, input_type: email, display: Email, validate: [required, email, confirmed] } }
-  - { handle: email_confirmation, field: { type: text, input_type: email, display: 'Confirm Email', validate: [required] } }
+  - { handle: first_name, field: { type: text, display: First, validate: [required], width: 50, column: left, group: Name, sublabel: true } }
+  - { handle: last_name, field: { type: text, display: Last, validate: [required], width: 50, column: right, sublabel: true } }
+  - { handle: email, field: { type: text, input_type: email, display: 'Enter Email', validate: [required, email, confirmed], width: 50, column: left, group: Email, sublabel: true } }
+  - { handle: email_confirmation, field: { type: text, input_type: email, display: 'Confirm Email', validate: [required], width: 50, column: right, sublabel: true } }
   - { handle: resume, field: { type: files, display: 'Upload Resume', max_files: 1, validate: [required, 'max:65536', 'mimes:pdf,doc,docx'] } }

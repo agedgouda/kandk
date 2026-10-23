@@ -24,11 +24,13 @@ blocks:
     heading: 'Our Information Systems Consulting Services'
     heading_style: small
     text: 'Our goal is to empower you with reliable, secure, and efficient systems that enhance operational performance and support long-term growth. By combining technical expertise with a deep understanding of your business objectives, we deliver solutions that drive productivity, safeguard data, and adapt to changing demands.'
+    indent: 40
+    system_font: true
   -
     id: 0fb5d2fd
     type: feature_list
     enabled: true
-    columns: '2'
+    columns: 1
     items:
       -
         id: cd405083
@@ -85,4 +87,7 @@ blocks:
     text: 'At Kaufman & Kabani, we’re dedicated to “Excellence in building client success,” a mission that extends to our team. If you’re a self-starter with at least three years of public accounting experience and talent in accounting, business consulting, or tax planning, we invite you to join our diverse client-focused practice.'
     button_text: 'Job Openings'
     button_url: /careers
+    heading_size_phone: 42
+    heading_line_height_phone: 52
+    hide_subtitle_phone: true
 ---

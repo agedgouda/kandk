@@ -1,26 +1,26 @@
-<section class="px-5 pt-[70px] md:px-10">
-    <div class="px-[10px] md:px-[30px]">
-        <h2 class="font-serif text-[32px] leading-[1.25] text-primary md:text-[42px] md:leading-[54px]">{{ name }}</h2>
-        <div class="text-[22px] leading-[40px] text-secondary md:leading-[54px]">{{ role }}</div>
+<section class="px-10 pt-[var(--above-phone)] pb-[var(--below)] md:pt-[var(--above)]" style="--above: {{ space_above !== null ? space_above : 70 }}px; --above-phone: {{ space_above_phone !== null ? space_above_phone : 20 }}px; --below: {{ space_below !== null ? space_below : 30 }}px; --indent: {{ (indent ?? 50) - 40 }}px; --name-gap: {{ name_gap !== null ? name_gap : 10 }}px">
+    <div class="pr-[10px] pb-[var(--name-gap)] pl-[var(--indent)]">
+        <h2 class="font-serif text-[28px] leading-[51px] text-primary md:text-[42px] md:leading-[54px]">{{ name }}</h2>
+        <div class="text-[18px] leading-[51px] text-secondary md:text-[22px] md:leading-[54px]">{{ role }}</div>
     </div>
-    <div class="mt-[30px] flex flex-col gap-6 p-[10px] sm:flex-row sm:gap-[85px]">
-        <div class="shrink-0 sm:w-[108px]">
-            {{ partial:img :image="photo" widths="108,216" sizes="108px" :alt="name" class="h-auto w-[108px]" }}
-            <div class="mt-5 flex gap-[10px]">
+    <div class="flex flex-col gap-10 px-[10px] pt-[10px] md:flex-row md:gap-[75px]">
+        <div class="shrink-0 md:w-[108px]">
+            {{ partial:img :image="photo" widths="120,240" sizes="120px" :alt="name" class="h-auto max-w-none" }}
+            <div class="mt-5 flex gap-[5px]">
                 {{ if linkedin }}
-                    <a href="{{ linkedin }}" class="inline-flex size-7 items-center justify-center rounded-[10%] bg-[#0077b5]" target="_blank" rel="noopener">
+                    <a href="{{ linkedin }}" class="inline-flex size-7 items-center justify-center rounded-full bg-[#0077b5]" target="_blank" rel="noopener">
                         <span class="sr-only">LinkedIn</span>
                         <svg class="size-[14px] fill-white" viewBox="0 0 448 512" aria-hidden="true"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg>
                     </a>
                 {{ /if }}
                 {{ if email }}
-                    <a href="mailto:{{ email }}" class="inline-flex size-7 items-center justify-center rounded-[10%] bg-secondary">
+                    <a href="mailto:{{ email }}" class="inline-flex size-7 items-center justify-center rounded-full bg-secondary">
                         <span class="sr-only">Email {{ name }}</span>
                         <svg class="size-[14px] fill-white" viewBox="0 0 512 512" aria-hidden="true"><path d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"/></svg>
                     </a>
                 {{ /if }}
             </div>
         </div>
-        <div class="text-[16px] leading-6 [&_p+p]:mt-5">{{ bio }}</div>
+        <div class="text-[16px] leading-[1.4] md:leading-6 [&_p+p]:mt-5">{{ bio }}</div>
     </div>
 </section>

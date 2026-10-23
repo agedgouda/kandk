@@ -13,6 +13,7 @@ blocks:
     id: eb085ac0
     type: case_studies
     enabled: true
+    inset_phone: 30
   -
     id: 1c391e01
     type: cta_banner
@@ -27,4 +28,6 @@ blocks:
     enabled: true
     testimonial:
       - 5d69a8f7-bb25-4134-a7a0-5b926035f62a
+    quote_size: small
+    inset: 0
 ---

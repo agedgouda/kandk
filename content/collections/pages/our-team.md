@@ -16,7 +16,7 @@ blocks:
     type: intro
     enabled: true
     heading: 'Your Trusted Advisors'
-    heading_align: center
+    heading_align: left
     text: 'Your success is our mission. The Kaufman & Kabani team comprises expert CPAs, tax, and business consultants committed to understanding your unique needs. We deliver proactive, tailored solutions to help your business thrive, serving as your trusted advisors every step of the way.'
     button_text: 'About Us'
     button_url: /about-us
@@ -53,6 +53,7 @@ blocks:
       Originally from Karachi, Pakistan, Kabani holds accounting and law degrees and is a licensed Chartered Accountant and Chartered Management Accountant in the United Kingdom. His academic and professional excellence is underscored by prestigious accolades, including the AICPA’s Elijah Watt Sells Award for achieving the highest scores on the Uniform CPA Examination and multiple gold medals for outstanding performance on the Chartered Accountants’ examinations
 
       Kabani is an active member of the American Institute of Certified Public Accountants, California Society of Certified Public Accountants and several trade and professional associations. He is also a certified mediator with the Los Angeles County Bar Association and has managed several mediations and served as expert witness. He has served on the boards of various professional and community organizations, including the Qualifications Committee of the State Board of Accountancy in California. He has made numerous presentations on business and financial management topics.
+    space_above_phone: 9
   -
     id: 17d81b5d
     type: team_member
@@ -69,6 +70,10 @@ blocks:
       A graduate of Columbia University, Glenn holds an undergraduate degree and earned a Master’s degree in Accounting from California State University, Northridge. He is an active member of the California Society of Certified Public Accountants (CalCPA) and the American Institute of Certified Public Accountants (AICPA), staying at the forefront of industry developments.
 
       Dedicated to knowledge-sharing, Glenn frequently serves as a guest lecturer and presenter for regional trade and professional organizations, offering insights on tax strategies and financial planning. His commitment to community service is equally strong, as he actively participates in his local temple and provides pro bono consulting services to nonprofit organizations, helping them navigate financial and operational challenges.
+    indent: 40
+    space_above: 60
+    name_gap: 0
+    space_above_phone: 0
   -
     id: a886a402
     type: team_member
@@ -84,12 +89,18 @@ blocks:
       Before joining Kaufman & Kabani, Amin gained valuable experience at an international affiliate of PricewaterhouseCoopers, honing his skills in global accounting and advisory practices. A graduate of the University of Karachi, Pakistan, with a concentration in accounting, he holds multiple professional credentials, including California Certified Public Accountant, Chartered Accountant, and Cost and Management Accountant. His academic excellence was recognized with the prestigious J.P. Patel Gold Medal for outstanding performance on the Chartered Accountants’ examinations.
 
       Beyond his professional achievements, Amin is deeply engaged in community service. He has served as a Council Member at the Aga Khan Council for the Western United States and previously held the role of Member Finance for the Western Region of the Aga Khan Foundation, USA. In his personal time, Amin is an enthusiastic biker and avid traveler, embracing opportunities to explore new cultures and landscapes.
+    indent: 40
+    space_above: 60
+    name_gap: 0
+    space_below: 110
+    space_above_phone: 0
   -
     id: 6d162692
     type: testimonial
     enabled: true
     testimonial:
       - 32d1f3da-c5cc-4673-82cd-3d822bc6e5f9
+    space_above: 0
   -
     id: 778da664
     type: careers_banner
@@ -100,4 +111,5 @@ blocks:
     text: 'At Kaufman & Kabani, we’re dedicated to “Excellence in building client success,” a mission that extends to our team. If you’re a self-starter with at least three years of public accounting experience and talent in accounting, business consulting, or tax planning, we invite you to join our diverse client-focused practice.'
     button_text: 'Job Openings'
     button_url: /careers
+    hide_on_phone: true
 ---
